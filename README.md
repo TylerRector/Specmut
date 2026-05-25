@@ -73,8 +73,8 @@ Key flags: `-n/--model-bound` (carrier size for model enumeration),
 `phase4/` contains an experiment that tests whether mutation feedback can steer
 a small code model toward tighter Lean theorem statements. Each task supplies a
 Lean scaffold (axioms + helper predicates); the model emits theorem-only output,
-which is sanitized, type-checked, analyzed, and — in the specmut-informed
-variant — repaired against a required theorem template. Pipeline stages live in
+which is sanitized, type-checked, analyzed, and in the specmut-informed
+variant, repaired against a required theorem template. Pipeline stages live in
 `phase4/scripts/` and are driven by `run_pipeline.py`; task definitions are under
 `phase4/benchmarks/`.
 
