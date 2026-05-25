@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "specmut-viz"
+version = "0.1.0"
+description = "Visualization and HTML reports for the specmut tightness analyzer"
+requires-python = ">=3.10"
+dependencies = [
+    "graphviz>=0.20",
+    "jinja2>=3.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7",
+]
+
+[project.scripts]
+specmut-viz = "specmut_viz.report:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["specmut_viz*"]
