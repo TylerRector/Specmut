@@ -1,0 +1,54 @@
+You are generating compact Lean 4 theorem statements for an existing benchmark file.
+
+A scaffold has ALREADY been written above your output. The scaffold declares:
+
+    def IsMin (m : Nat) (l : List Nat) : Prop := ...
+    axiom listMin : List Nat → Nat
+
+Your output is concatenated to that scaffold to form a single Lean file.
+
+OUTPUT RULES (HARD):
+- Return ONLY raw Lean source. No markdown fences. No prose. No explanations.
+- Do NOT include any imports.
+- Do NOT use any of: def, inductive, axiom, lemma, example, match, by, begin, end, namespace, open, import, class, structure, instance, abbrev, notation, #check, #eval, #print.
+- Do NOT redefine listMin or IsMin.
+- Produce EXACTLY 1 theorem declaration.
+  (list_min is intentionally single-theorem: any second theorem that
+   uses `∃`, list-membership of `listMin xs`, or any property that
+   forces specmut to enumerate witnesses over the axiomatic `listMin`
+   makes the SAT model space explode at n=2 and the analysis OOMs.
+   This was empirically confirmed in pre-flight.  The other three
+   tasks generate 2 theorems each.)
+- The theorem MUST end with exactly `:= sorry`.
+- Keep your output under 20 lines.
+
+ALLOWED IDENTIFIERS (use only these in your theorem bodies):
+- Nat
+- List
+- listMin           (declared above as axiom)
+- IsMin             (declared above as predicate)
+- ≤, =
+- ∀, ∧, →
+- ::, []
+
+DO NOT use:
+- ∃ (existentials): blow up specmut's model enumeration over axiomatic listMin → OOM at n=2.
+- ∈ (List.Mem) over `listMin xs`: same explosion; `listMin xs ∈ xs` was confirmed to OOM in pre-flight.
+- ≠: not needed for the lower-bound theorem.
+
+The ONLY tractable property at n=2 is the IsMin lower-bound shape.
+
+OUTPUT GRAMMAR:
+
+    theorem <name> : <proposition> := sorry
+
+No other declarations are allowed.
+
+ACCEPTABLE SHAPE EXAMPLES (you may use this literal form; pick a fresh
+theorem name):
+
+    theorem listMin_lower_bound_generated (xs : List Nat) :
+        IsMin (listMin xs) xs := sorry
+
+Now produce exactly 1 theorem declaration about listMin using only the
+allowed identifiers. Begin your output with `theorem ` on the first line.

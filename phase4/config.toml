@@ -1,0 +1,49 @@
+# Phase 4 experiment configuration — FROZEN after first generation.
+# Any change to this file after data collection begins invalidates the
+# experiment and forces a new experiment directory.
+
+[experiment]
+name        = "phase4_specmut_evaluation"
+base_seed   = 42
+replicates  = 15
+
+# Three independent training lineages.  Ollama tags resolve against the
+# locally-installed model registry — pull each with:
+#   ollama pull deepseek-coder:6.7b
+#   ollama pull qwen2.5-coder:7b
+#   ollama pull phi3:mini
+[models]
+m1 = { name = "deepseek-coder:6.7b", backend = "ollama", quantization = "q4" }
+m2 = { name = "qwen2.5-coder:7b",     backend = "ollama", quantization = "q4" }
+m3 = { name = "phi3:mini",            backend = "ollama", quantization = "q4" }
+
+[generation]
+temperature      = 0.8
+top_p            = 0.95
+max_tokens       = 2048
+generation_timeout_sec = 180
+# Model-server URL is read from the OLLAMA_URL environment variable
+# (export OLLAMA_URL=http://host:port); not stored in the repo.
+
+[analysis]
+n                          = 2
+epsilon                    = 1.0
+max_mutants_per_slice      = 50
+max_slices_per_file        = 20
+lean_timeout_sec           = 60
+specmut_timeout_sec        = 180  # raised from spec's 30s — Phase H showed
+                                  # ~100s for rich specs; we set the ceiling
+                                  # high enough to capture meaningful runs.
+
+[thresholds]
+weak_theorem_tau   = 0.3
+strong_theorem_tau = 0.7
+
+[determinism]
+# Files to use for the determinism check.  Each must be a baseline that
+# specmut analyzed successfully.  Resolved at validate_determinism.py time.
+runs_per_file  = 3
+files_to_test  = 5
+# Fields excluded from the bitwise comparison.  Timing varies across
+# wall-clock runs and is not a correctness signal.
+ignored_fields = ["timing", "elapsed_sec", "runtime_sec"]

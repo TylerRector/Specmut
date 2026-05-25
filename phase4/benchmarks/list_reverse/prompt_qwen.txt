@@ -1,0 +1,45 @@
+You are generating compact Lean 4 theorem statements for an existing benchmark file.
+
+A scaffold has ALREADY been written above your output. The scaffold declares:
+
+    def IsMax (m : Nat) (l : List Nat) : Prop := ...
+    axiom rev   : List Nat → List Nat
+    axiom maxOf : List Nat → Nat
+
+Your output is concatenated to that scaffold to form a single Lean file.
+
+OUTPUT RULES (HARD):
+- Return ONLY raw Lean source. No markdown fences. No prose.
+- Do NOT include any imports.
+- Do NOT use any of: def, inductive, axiom, lemma, example, match, by, begin, end, namespace, open, import, class, structure, instance, abbrev, notation, #check, #eval, #print.
+- Do NOT redefine rev, maxOf, or IsMax.
+- Produce EXACTLY 2 theorem declarations.
+- Each theorem MUST end with exactly `:= sorry`.
+- Keep your output under 30 lines.
+
+ALLOWED IDENTIFIERS:
+- Nat
+- List
+- rev               (declared above as axiom; this is the reverse function)
+- maxOf             (declared above as axiom; max element accessor)
+- IsMax             (declared above as predicate)
+- ≤, =, ≠
+- ∀, ∃, ∧, ∨, →, ¬
+- ∈, List.length, ::, []
+
+OUTPUT GRAMMAR:
+
+    theorem <name_1> : <proposition> := sorry
+
+    theorem <name_2> : <proposition> := sorry
+
+ACCEPTABLE SHAPE EXAMPLES (do not copy verbatim):
+
+    theorem rev_max_preserved_generated (xs : List Nat) :
+        IsMax (maxOf xs) xs → IsMax (maxOf (rev xs)) (rev xs) := sorry
+
+    theorem rev_max_self_generated (xs : List Nat) :
+        IsMax (maxOf xs) (rev xs) := sorry
+
+Now produce exactly 2 theorem declarations about rev using only the
+allowed identifiers. Begin your output with `theorem ` on the first line.

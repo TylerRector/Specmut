@@ -1,0 +1,13 @@
+{
+  "status": "compile_success",
+  "errors": [],
+  "warnings": [
+    ":11:8: warning: declaration uses `sorry`"
+  ],
+  "elapsed_sec": 0.497,
+  "exit_code": 0,
+  "file": "phase4/benchmarks/list_reverse/partial.lean",
+  "condition": "controls",
+  "task": "list_reverse",
+  "control_type": "partial"
+}

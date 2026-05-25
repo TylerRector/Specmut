@@ -1,0 +1,11 @@
+{
+  "status": "compile_success",
+  "errors": [],
+  "warnings": [],
+  "elapsed_sec": 0.408,
+  "exit_code": 0,
+  "file": "phase4/benchmarks/sorting/trivial.lean",
+  "condition": "controls",
+  "task": "sorting",
+  "control_type": "trivial"
+}

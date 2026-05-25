@@ -1,0 +1,140 @@
+# Phase 4 — qwen-only template-constrained variant.
+#
+# Scientific framing:
+#   "Template-constrained compact formal specification generation for
+#    mutation-based semantic evaluation."
+#
+# We are NOT testing whether a 7B model can freely synthesize arbitrary
+# Lean.  We are testing whether specmut produces stable semantic-tightness
+# signals on compact LLM-generated Lean theorem statements when the model
+# is given the benchmark's vocabulary up front (helpers/axioms) and is
+# constrained to emit only theorem declarations.
+#
+# Differences from the original frozen Phase 4 config:
+#   - models  : qwen2.5-coder:7b ONLY (deepseek/phi3 removed — see prior
+#               run; they produced 0 analyzable outputs in 90 generations).
+#   - replicates: 50 (was 15; only one model now, so the per-task n
+#                  increases while total generations stay comparable
+#                  to the previous 180-generation run).
+#   - generation.temperature : 0.4 (was 0.8).  Compile/analyzability yield
+#                              is prioritized over stochastic variability.
+#   - generation.top_p : 0.9 (was 0.95).
+#   - generation.max_tokens : 512 (was 2048; theorem-only output is short).
+#   - generation.generation_timeout_sec : 600 (was 180; guard against
+#                                              slow loads on first request).
+#   - generation.ollama_url : the local model server (set for your env).
+#
+# This file is SEPARATE from config.toml — the original frozen run's
+# data and provenance are preserved.  Selecting this variant is done by
+# setting PHASE4_CONFIG=phase4/config_qwen_only.toml.
+
+[experiment]
+name        = "phase4_qwen_template_constrained"
+base_seed   = 42
+replicates  = 50
+
+[models]
+m1 = { name = "qwen2.5-coder:7b", backend = "ollama", quantization = "q4" }
+
+[generation]
+# Decoding is tuned for RELIABILITY, not creativity.  The prior
+# unrestructured run failed on syntax / format / analyzability — not
+# on insufficient sampling diversity.  Lowering T and top_p favors
+# the highest-probability theorem shapes, which matches the
+# template-constrained prompts (the model just needs to specialize
+# the example shape correctly, not invent new properties).
+#
+# After the first production run we can re-evaluate whether T=0.4 or
+# T=0.6 produces meaningfully different tau distributions; if compile/
+# analyzable yield is already saturated, more stochasticity adds noise.
+temperature              = 0.2
+top_p                    = 0.85
+max_tokens               = 512
+generation_timeout_sec   = 600
+# Model-server URL is read from the OLLAMA_URL environment variable
+# (export OLLAMA_URL=http://host:port); not stored in the repo.
+
+[analysis]
+n                        = 2
+epsilon                  = 1.0
+max_mutants_per_slice    = 50
+max_slices_per_file      = 20
+lean_timeout_sec         = 60
+specmut_timeout_sec      = 180
+
+[thresholds]
+weak_theorem_tau   = 0.3
+strong_theorem_tau = 0.7
+
+[determinism]
+runs_per_file  = 3
+files_to_test  = 5
+# Suffix-based ignored fields. Any dict key matching one of these literal
+# names OR ending in one of these suffixes is dropped before the bitwise
+# comparison.  Timing fields (enumeration_ms, elapsed_sec, runtime_sec,
+# total_ns, etc.) vary across wall-clock runs by design and are not a
+# correctness signal.  See validate_determinism.py for the matcher.
+ignored_fields = [
+    "timing",
+    "elapsed_sec",
+    "runtime_sec",
+    "enumeration_ms",
+    "analysis_ms",
+    "_ms",      # suffix match: enumeration_ms, analysis_ms, ...
+    "_sec",     # suffix match: elapsed_sec, runtime_sec, ...
+    "_ns",      # suffix match: total_ns, monotonic_ns, ...
+    "_us",      # suffix match: any *_us
+    "timestamp",
+    "timestamp_utc",
+]
+
+[prompts]
+# Use the qwen-only template-constrained prompts (see
+# benchmarks/<task>/prompt_qwen.txt).  The original prompt.txt files are
+# preserved unchanged for the frozen experiment's provenance.
+filename = "prompt_qwen.txt"
+
+[scaffold]
+# When true, generate_baseline prepends benchmarks/<task>/scaffold.lean
+# to the (sanitized) LLM output before writing the .lean file.  This
+# guarantees the file contains the axioms + helper predicates the
+# theorem statements reference, without trusting the model to redefine
+# them correctly.
+enabled  = true
+filename = "scaffold.lean"
+
+[sanitizer]
+# Hard limits enforced by sanitize_generated.py before lean_check sees
+# the generated file.  Files that violate are written as-is BUT their
+# .meta.json records sanitizer_status != "ok" and lean_check treats them
+# as compile_failure attrition without consuming a real Lean process.
+max_theorems  = 2
+max_lines     = 60
+require_sorry = true
+forbidden_keywords = [
+    "def ",
+    "inductive ",
+    "axiom ",
+    "lemma ",
+    "example ",
+    " by ",
+    " by\n",
+    ":= by",
+    "begin",
+    "end\n",
+    " match ",
+    "import ",
+    "open ",
+    "namespace ",
+    "class ",
+    "structure ",
+    "instance ",
+    "abbrev ",
+    "notation ",
+    "macro ",
+    "syntax ",
+    "elab ",
+    "#check",
+    "#eval",
+    "#print",
+]

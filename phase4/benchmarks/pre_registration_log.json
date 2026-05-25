@@ -1,0 +1,23 @@
+{
+  "phase": 4,
+  "stage": "pre_registration_gate",
+  "config": {
+    "n": 2,
+    "epsilon": 1.0,
+    "specmut_timeout_sec": 180
+  },
+  "criterion": "reference.lean must produce specmut analysis with tau > 0",
+  "results": [
+    {"task": "sorting",       "reference_tau": 0.265, "killed": 18, "total": 68,  "status": "pass"},
+    {"task": "bst_insert",    "reference_tau": 0.949, "killed": 75, "total": 79,  "status": "pass"},
+    {"task": "list_reverse",  "reference_tau": 0.605, "killed": 75, "total": 124, "status": "pass"},
+    {"task": "set_insert",    "reference_tau": 0.571, "killed": 36, "total": 63,  "status": "pass"},
+    {"task": "list_min",      "reference_tau": 0.952, "killed": 60, "total": 63,  "status": "pass",
+     "replaces": "stack",
+     "replacement_reason": "stack reference triggered OOM-kill (exit 137) at specmut --lean-full -n 2 — exceeded 15 GiB available memory while enumerating models for the IsEmpty + push + push_length signature.  Replaced with list_min per Phase 4 spec ('Tasks that fail this gate are replaced'). list_min uses an analogous algebraic invariant (IsMin lower-bound) and exercises the same predicate-preservation pattern used by other Phase 4 tasks."}
+  ],
+  "notes": [
+    "Partial control for list_min collapses to ~trivial (single self-equality theorem) because the reference has only one strong theorem; documented in partial.lean.",
+    "Partial controls for sorting/bst_insert produced tau slightly higher than their references (0.273 vs 0.265, 0.952 vs 0.949). This is expected: removing a theorem leaves a smaller mutant pool with potentially higher kill ratio. The discriminative test that matters for Phase 4 is trivial-vs-LLM, not partial-vs-reference."
+  ]
+}

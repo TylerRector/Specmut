@@ -1,0 +1,13 @@
+{
+  "status": "compile_success",
+  "errors": [],
+  "warnings": [
+    ":10:8: warning: declaration uses `sorry`",
+    ":13:8: warning: declaration uses `sorry`"
+  ],
+  "elapsed_sec": 0.878,
+  "exit_code": 0,
+  "file": "phase4/benchmarks/set_insert/reference.lean",
+  "condition": "references",
+  "task": "set_insert"
+}
