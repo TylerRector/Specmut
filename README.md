@@ -30,7 +30,7 @@ theorem states, not its proof term.
 crates/                Rust workspace (the tool)
   specmut-core/        mutation, model enumeration, tightness metric
   specmut-smt/         Z3 backend
-  specmut-parser/      FOL / Lean / Dafny front ends
+  specmut-parser/      FOL / Lean front ends
   specmut-lean/        Lean slicing + IR translation
   specmut-cli/         command-line binary
 python/                specmut_viz: reporting / plotting package
