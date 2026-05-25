@@ -1,0 +1,11 @@
+-- Sorting V1: strict-less-than ordering.  Subtly buggy because a
+-- correct sort allows equal elements adjacent to each other; with
+-- strict < the predicate fails on inputs containing duplicates.
+sort Elem.
+rel lt : Elem, Elem.
+rel sorted_list : Elem.
+rel perm : Elem, Elem.
+func sort_output : Elem -> Elem.
+
+axiom forall x : Elem . sorted_list(sort_output(x)).
+axiom forall x : Elem . perm(x, sort_output(x)).

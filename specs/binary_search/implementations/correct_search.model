@@ -1,0 +1,21 @@
+-- A toy two-element implementation of the binary-search spec.
+-- Idx = {0, 1}, Val = {0, 1}.  Both indices are in bounds and in the
+-- sorted region; both values are present; arr = [0, 1]; search maps
+-- value v to its index.
+model Idx = {i0, i1}.
+model Val = {v0, v1}.
+
+at_idx(i0) = v0.
+at_idx(i1) = v1.
+
+search(v0) = i0.
+search(v1) = i1.
+
+present(v0) = true.
+present(v1) = true.
+
+within_bounds(i0) = true.
+within_bounds(i1) = true.
+
+sorted_arr(i0) = true.
+sorted_arr(i1) = true.

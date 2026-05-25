@@ -1,0 +1,4 @@
+-- Empty spec: declarations only, no axioms.  Degenerate case for the
+-- end-to-end pipeline.
+sort S.
+rel P : S.

@@ -1,0 +1,4 @@
+-- Minimal non-trivial spec: 1 sort, 1 unary relation, 1 axiom.
+sort S.
+rel P : S.
+axiom forall x : S . P(x).

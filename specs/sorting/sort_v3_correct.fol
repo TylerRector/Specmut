@@ -1,0 +1,9 @@
+-- Sorting V3: non-strict ordering and multiset permutation.
+sort Elem.
+rel leq : Elem, Elem.
+rel sorted_list : Elem.
+rel multiset_perm : Elem, Elem.
+func sort_output : Elem -> Elem.
+
+axiom forall x : Elem . sorted_list(sort_output(x)).
+axiom forall x : Elem . multiset_perm(x, sort_output(x)).
