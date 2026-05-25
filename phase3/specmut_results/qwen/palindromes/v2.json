@@ -1,0 +1,129 @@
+{
+  "file": "phase3/generated/qwen/palindromes/v2.lean",
+  "source": "llm",
+  "model": "qwen",
+  "task": "palindromes",
+  "version": 2,
+  "parameters": {
+    "model_bound": 2,
+    "epsilon": 1.0
+  },
+  "analysis_mode": "global",
+  "average_tau": 0.2727272727272727,
+  "min_tau": 0.2727272727272727,
+  "max_tau": 0.2727272727272727,
+  "tau_variance": 0.0,
+  "slice_count": 0,
+  "theorem_count": 1,
+  "analyzed_theorem_count": 1,
+  "skipped_theorem_count": 0,
+  "total_mutants": 55,
+  "surviving_mutants": 40,
+  "killed_mutants": 15,
+  "kill_rate": 0.2727272727272727,
+  "weak_theorems": [
+    "(global)"
+  ],
+  "per_theorem": [
+    {
+      "name": "(global)",
+      "tau": 0.2727272727272727,
+      "kill_rate": 0.2727272727272727,
+      "surviving_mutants": 40,
+      "total_mutants": 55,
+      "contribution": "None",
+      "translated_theorem_names": [
+        "rev_preserves_sorted"
+      ]
+    }
+  ],
+  "witnesses": [
+    {
+      "theorem": "rev_preserves_sorted",
+      "mutant_class": "weakening",
+      "distance": 0.02857142857142857,
+      "preserved_properties": [
+        "every auto-selected implementation model satisfies both the original and this mutated axiom"
+      ],
+      "unconstrained_behaviors": [
+        "perturbed axiom: ((true \\/ ~IsSorted(List.nil)) /\\ (false \\/ IsSorted(List.nil)))",
+        "component index 0"
+      ],
+      "interpretation": "The specification was strictly weakened along this dimension and still admits at least one implementation that satisfies it \u2014 meaning the spec does not constrain the predicate beyond what the weaker form requires.",
+      "model_description": "(synthetic \u2014 Phase F per-model witnesses populate only on the per-theorem sliced path; this spec landed in global mode)"
+    },
+    {
+      "theorem": "rev_preserves_sorted",
+      "mutant_class": "replacement",
+      "distance": 0.02857142857142857,
+      "preserved_properties": [
+        "every auto-selected implementation model satisfies both the original and this mutated axiom"
+      ],
+      "unconstrained_behaviors": [
+        "perturbed axiom: forall : Nat . leq(v0, v0)",
+        "component index 0"
+      ],
+      "interpretation": "The original predicate was replaced by a different relation; the specification does not pin down which atomic predicate must hold, so an implementation satisfying the replacement also satisfies the spec.",
+      "model_description": "(synthetic \u2014 Phase F per-model witnesses populate only on the per-theorem sliced path; this spec landed in global mode)"
+    },
+    {
+      "theorem": "rev_preserves_sorted",
+      "mutant_class": "replacement",
+      "distance": 0.02857142857142857,
+      "preserved_properties": [
+        "every auto-selected implementation model satisfies both the original and this mutated axiom"
+      ],
+      "unconstrained_behaviors": [
+        "perturbed axiom: forall : Nat . forall : Nat . leq(v0, v1)",
+        "component index 0"
+      ],
+      "interpretation": "The original predicate was replaced by a different relation; the specification does not pin down which atomic predicate must hold, so an implementation satisfying the replacement also satisfies the spec.",
+      "model_description": "(synthetic \u2014 Phase F per-model witnesses populate only on the per-theorem sliced path; this spec landed in global mode)"
+    },
+    {
+      "theorem": "rev_preserves_sorted",
+      "mutant_class": "replacement",
+      "distance": 0.02857142857142857,
+      "preserved_properties": [
+        "every auto-selected implementation model satisfies both the original and this mutated axiom"
+      ],
+      "unconstrained_behaviors": [
+        "perturbed axiom: forall : Nat . forall : Bool . forall : Nat . leq(v0, v2)",
+        "component index 0"
+      ],
+      "interpretation": "The original predicate was replaced by a different relation; the specification does not pin down which atomic predicate must hold, so an implementation satisfying the replacement also satisfies the spec.",
+      "model_description": "(synthetic \u2014 Phase F per-model witnesses populate only on the per-theorem sliced path; this spec landed in global mode)"
+    },
+    {
+      "theorem": "rev_preserves_sorted",
+      "mutant_class": "replacement",
+      "distance": 0.02857142857142857,
+      "preserved_properties": [
+        "every auto-selected implementation model satisfies both the original and this mutated axiom"
+      ],
+      "unconstrained_behaviors": [
+        "perturbed axiom: forall : Nat . forall : Nat . leq(v1, v0)",
+        "component index 0"
+      ],
+      "interpretation": "The original predicate was replaced by a different relation; the specification does not pin down which atomic predicate must hold, so an implementation satisfying the replacement also satisfies the spec.",
+      "model_description": "(synthetic \u2014 Phase F per-model witnesses populate only on the per-theorem sliced path; this spec landed in global mode)"
+    },
+    {
+      "theorem": "rev_preserves_sorted",
+      "mutant_class": "replacement",
+      "distance": 0.02857142857142857,
+      "preserved_properties": [
+        "every auto-selected implementation model satisfies both the original and this mutated axiom"
+      ],
+      "unconstrained_behaviors": [
+        "perturbed axiom: forall : Nat . forall : Bool . leq(v1, v1)",
+        "component index 0"
+      ],
+      "interpretation": "The original predicate was replaced by a different relation; the specification does not pin down which atomic predicate must hold, so an implementation satisfying the replacement also satisfies the spec.",
+      "model_description": "(synthetic \u2014 Phase F per-model witnesses populate only on the per-theorem sliced path; this spec landed in global mode)"
+    }
+  ],
+  "taxonomy": {},
+  "diagnostic_summary": "",
+  "elapsed_sec": 4.786
+}

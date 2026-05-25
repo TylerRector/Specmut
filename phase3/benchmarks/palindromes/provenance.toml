@@ -1,0 +1,19 @@
+# Provenance for benchmarks/palindromes/reference.lean.
+# This file is copied verbatim from the Lean 4 official examples.
+
+source_repo  = "leanprover/lean4"
+source_url   = "https://github.com/leanprover/lean4/blob/master/doc/examples/palindromes.lean"
+source_path  = "doc/examples/palindromes.lean"
+commit_sha   = "727b4aad2bbb2562e0e2b42e29334738409d167c"
+commit_date  = "2026-05-19T23:35:28+00:00"
+blob_sha     = "4457203a4e85b9e385f9992f04d972efb62cbedd"
+license      = "Apache-2.0"
+license_file = "https://github.com/leanprover/lean4/blob/master/LICENSE"
+retrieved_at = "2026-05-21"
+
+description = """
+The Palindrome inductive predicate on lists, with theorems that
+(1) the reverse of a palindrome is a palindrome and (2) a palindrome
+equals its own reverse.  Based on "The Hitchhiker's Guide to Logical
+Verification".
+"""

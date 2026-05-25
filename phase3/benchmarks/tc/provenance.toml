@@ -1,0 +1,19 @@
+# Provenance for benchmarks/tc/reference.lean.
+# This file is copied verbatim from the Lean 4 official examples.
+
+source_repo  = "leanprover/lean4"
+source_url   = "https://github.com/leanprover/lean4/blob/master/doc/examples/tc.lean"
+source_path  = "doc/examples/tc.lean"
+commit_sha   = "727b4aad2bbb2562e0e2b42e29334738409d167c"
+commit_date  = "2026-05-19T23:35:28+00:00"
+blob_sha     = "2b8252f7442fcd860a860a8241752e107096ab01"
+license      = "Apache-2.0"
+license_file = "https://github.com/leanprover/lean4/blob/master/LICENSE"
+retrieved_at = "2026-05-21"
+
+description = """
+A certified type-checker for a simple expression language: defines Expr and
+Ty inductives plus a HasType inductive predicate, with theorems that
+typing is unique and that the type-checker decides typing.  Based on Adam
+Chlipala's "Certified Programming with Dependent Types".
+"""

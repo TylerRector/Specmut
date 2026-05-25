@@ -1,0 +1,107 @@
+{
+  "tasks": [
+    "bintree",
+    "palindromes",
+    "tc"
+  ],
+  "models": [
+    "deepseek",
+    "qwen"
+  ],
+  "human_reference": {
+    "bintree": {
+      "provenance": {
+        "source_repo": "leanprover/lean4",
+        "source_url": "https://github.com/leanprover/lean4/blob/master/doc/examples/bintree.lean",
+        "source_path": "doc/examples/bintree.lean",
+        "commit_sha": "727b4aad2bbb2562e0e2b42e29334738409d167c",
+        "commit_date": "2026-05-19T23:35:28+00:00",
+        "blob_sha": "186ac759724b337b8be5efca257ca19c07ca33e7",
+        "license": "Apache-2.0",
+        "license_file": "https://github.com/leanprover/lean4/blob/master/LICENSE",
+        "retrieved_at": "2026-05-21",
+        "description": "Binary search trees on Nat keys with insert/find/contains/erase operations\nand correctness theorems about the BST invariant.  Based on Software\nFoundations Vol. 3 (SearchTree.html).\n"
+      },
+      "reference_loc": 295,
+      "analyzable_loc": 101,
+      "reference_compile_success": true,
+      "analyzable_compile_success": true,
+      "tau": 0.0,
+      "kill_rate": 0.0,
+      "weak_theorems": 0,
+      "total_mutants": 0,
+      "analysis_mode": "failed",
+      "specmut_error": "specmut exit 4: specmut: model bound 2 produces too many models (limit 4194304)"
+    },
+    "palindromes": {
+      "provenance": {
+        "source_repo": "leanprover/lean4",
+        "source_url": "https://github.com/leanprover/lean4/blob/master/doc/examples/palindromes.lean",
+        "source_path": "doc/examples/palindromes.lean",
+        "commit_sha": "727b4aad2bbb2562e0e2b42e29334738409d167c",
+        "commit_date": "2026-05-19T23:35:28+00:00",
+        "blob_sha": "4457203a4e85b9e385f9992f04d972efb62cbedd",
+        "license": "Apache-2.0",
+        "license_file": "https://github.com/leanprover/lean4/blob/master/LICENSE",
+        "retrieved_at": "2026-05-21",
+        "description": "The Palindrome inductive predicate on lists, with theorems that\n(1) the reverse of a palindrome is a palindrome and (2) a palindrome\nequals its own reverse.  Based on \"The Hitchhiker's Guide to Logical\nVerification\".\n"
+      },
+      "reference_loc": 120,
+      "analyzable_loc": 22,
+      "reference_compile_success": true,
+      "analyzable_compile_success": true,
+      "tau": 0.0,
+      "kill_rate": 0.0,
+      "weak_theorems": 0,
+      "total_mutants": 0,
+      "analysis_mode": "failed",
+      "specmut_error": "specmut exit 1: Hint: every theorem/predicate used constructs outside the supported first-order subset. Try a simpler spec or pass --lean-full off to see the extraction summary."
+    },
+    "tc": {
+      "provenance": {
+        "source_repo": "leanprover/lean4",
+        "source_url": "https://github.com/leanprover/lean4/blob/master/doc/examples/tc.lean",
+        "source_path": "doc/examples/tc.lean",
+        "commit_sha": "727b4aad2bbb2562e0e2b42e29334738409d167c",
+        "commit_date": "2026-05-19T23:35:28+00:00",
+        "blob_sha": "2b8252f7442fcd860a860a8241752e107096ab01",
+        "license": "Apache-2.0",
+        "license_file": "https://github.com/leanprover/lean4/blob/master/LICENSE",
+        "retrieved_at": "2026-05-21",
+        "description": "A certified type-checker for a simple expression language: defines Expr and\nTy inductives plus a HasType inductive predicate, with theorems that\ntyping is unique and that the type-checker decides typing.  Based on Adam\nChlipala's \"Certified Programming with Dependent Types\".\n"
+      },
+      "reference_loc": 117,
+      "analyzable_loc": 40,
+      "reference_compile_success": true,
+      "analyzable_compile_success": true,
+      "tau": 0.0,
+      "kill_rate": 0.0,
+      "weak_theorems": 0,
+      "total_mutants": 0,
+      "analysis_mode": "failed",
+      "specmut_error": "specmut exit 1: Hint: every theorem/predicate used constructs outside the supported first-order subset. Try a simpler spec or pass --lean-full off to see the extraction summary."
+    }
+  },
+  "per_model": {
+    "deepseek": {
+      "n_specs": 9,
+      "mean_tau": 0.44493580538905164,
+      "stdev_tau": 0.42547564308889685,
+      "mean_kill_rate": 0.44493580538905164,
+      "total_mutants": 439,
+      "mean_weak_theorems": 0.5555555555555556,
+      "compile_pass": 9,
+      "compile_fail": 0
+    },
+    "qwen": {
+      "n_specs": 9,
+      "mean_tau": 0.23376623376623376,
+      "stdev_tau": 0.3411889870020474,
+      "mean_kill_rate": 0.23376623376623376,
+      "total_mutants": 273,
+      "mean_weak_theorems": 0.4444444444444444,
+      "compile_pass": 9,
+      "compile_fail": 0
+    }
+  }
+}

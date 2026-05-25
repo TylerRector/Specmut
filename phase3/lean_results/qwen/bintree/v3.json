@@ -1,0 +1,14 @@
+{
+  "compile_success": true,
+  "typecheck_success": true,
+  "errors": [],
+  "warnings": [
+    ":12:8: warning: declaration uses `sorry`"
+  ],
+  "elapsed_sec": 0.485,
+  "exit_code": 0,
+  "file": "phase3/generated/qwen/bintree/v3.lean",
+  "model": "qwen",
+  "task": "bintree",
+  "version": 3
+}

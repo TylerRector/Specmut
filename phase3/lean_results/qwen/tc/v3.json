@@ -1,0 +1,14 @@
+{
+  "compile_success": true,
+  "typecheck_success": true,
+  "errors": [],
+  "warnings": [
+    ":11:8: warning: declaration uses `sorry`"
+  ],
+  "elapsed_sec": 0.524,
+  "exit_code": 0,
+  "file": "phase3/generated/qwen/tc/v3.lean",
+  "model": "qwen",
+  "task": "tc",
+  "version": 3
+}

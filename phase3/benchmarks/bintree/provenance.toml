@@ -1,0 +1,18 @@
+# Provenance for benchmarks/bintree/reference.lean.
+# This file is copied verbatim from the Lean 4 official examples.
+
+source_repo  = "leanprover/lean4"
+source_url   = "https://github.com/leanprover/lean4/blob/master/doc/examples/bintree.lean"
+source_path  = "doc/examples/bintree.lean"
+commit_sha   = "727b4aad2bbb2562e0e2b42e29334738409d167c"
+commit_date  = "2026-05-19T23:35:28+00:00"
+blob_sha     = "186ac759724b337b8be5efca257ca19c07ca33e7"
+license      = "Apache-2.0"
+license_file = "https://github.com/leanprover/lean4/blob/master/LICENSE"
+retrieved_at = "2026-05-21"
+
+description = """
+Binary search trees on Nat keys with insert/find/contains/erase operations
+and correctness theorems about the BST invariant.  Based on Software
+Foundations Vol. 3 (SearchTree.html).
+"""

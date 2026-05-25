@@ -1,0 +1,100 @@
+{
+  "file": "phase3/generated/deepseek/bintree/v3.lean",
+  "source": "llm",
+  "model": "deepseek",
+  "task": "bintree",
+  "version": 3,
+  "parameters": {
+    "model_bound": 2,
+    "epsilon": 1.0
+  },
+  "analysis_mode": "global",
+  "average_tau": 0.9493670886075949,
+  "min_tau": 0.9493670886075949,
+  "max_tau": 0.9493670886075949,
+  "tau_variance": 0.0,
+  "slice_count": 0,
+  "theorem_count": 2,
+  "analyzed_theorem_count": 2,
+  "skipped_theorem_count": 0,
+  "total_mutants": 79,
+  "surviving_mutants": 4,
+  "killed_mutants": 75,
+  "kill_rate": 0.9493670886075949,
+  "weak_theorems": [],
+  "per_theorem": [
+    {
+      "name": "(global)",
+      "tau": 0.9493670886075949,
+      "kill_rate": 0.9493670886075949,
+      "surviving_mutants": 4,
+      "total_mutants": 79,
+      "contribution": "None",
+      "translated_theorem_names": [
+        "bstInsert_max_grows",
+        "bstInsert_max_bound"
+      ]
+    }
+  ],
+  "witnesses": [
+    {
+      "theorem": "bstInsert_max_grows, bstInsert_max_bound",
+      "mutant_class": "weakening",
+      "distance": 0.019736842105263157,
+      "preserved_properties": [
+        "every auto-selected implementation model satisfies both the original and this mutated axiom"
+      ],
+      "unconstrained_behaviors": [
+        "perturbed axiom: forall : Nat . forall : List_Nat . (IsMax(bstMax(bstInsert(v1, v0)), bstInsert(v1, v0)) \\/ ~IsMax(bstMax(v0), v0))",
+        "component index 2"
+      ],
+      "interpretation": "The specification was strictly weakened along this dimension and still admits at least one implementation that satisfies it \u2014 meaning the spec does not constrain the predicate beyond what the weaker form requires.",
+      "model_description": "(synthetic \u2014 Phase F per-model witnesses populate only on the per-theorem sliced path; this spec landed in global mode)"
+    },
+    {
+      "theorem": "bstInsert_max_grows, bstInsert_max_bound",
+      "mutant_class": "weakening",
+      "distance": 0.1534090909090909,
+      "preserved_properties": [
+        "every auto-selected implementation model satisfies both the original and this mutated axiom"
+      ],
+      "unconstrained_behaviors": [
+        "perturbed axiom: forall : Nat . forall : List_Nat . IsMax(bstMax(bstInsert(v1, v0)), v0)",
+        "component index 1"
+      ],
+      "interpretation": "The specification was strictly weakened along this dimension and still admits at least one implementation that satisfies it \u2014 meaning the spec does not constrain the predicate beyond what the weaker form requires.",
+      "model_description": "(synthetic \u2014 Phase F per-model witnesses populate only on the per-theorem sliced path; this spec landed in global mode)"
+    },
+    {
+      "theorem": "bstInsert_max_grows, bstInsert_max_bound",
+      "mutant_class": "weakening",
+      "distance": 0.6750272628135223,
+      "preserved_properties": [
+        "every auto-selected implementation model satisfies both the original and this mutated axiom"
+      ],
+      "unconstrained_behaviors": [
+        "perturbed axiom: forall : Nat . ((true \\/ ~IsMax(v0, List.nil)) /\\ (false \\/ IsMax(v0, List.nil)))",
+        "component index 0"
+      ],
+      "interpretation": "The specification was strictly weakened along this dimension and still admits at least one implementation that satisfies it \u2014 meaning the spec does not constrain the predicate beyond what the weaker form requires.",
+      "model_description": "(synthetic \u2014 Phase F per-model witnesses populate only on the per-theorem sliced path; this spec landed in global mode)"
+    },
+    {
+      "theorem": "bstInsert_max_grows, bstInsert_max_bound",
+      "mutant_class": "weakening",
+      "distance": 0.9560731132075472,
+      "preserved_properties": [
+        "every auto-selected implementation model satisfies both the original and this mutated axiom"
+      ],
+      "unconstrained_behaviors": [
+        "perturbed axiom: forall : Nat . forall : Nat . forall : List_Nat . ((IsMax(v2, List.cons(v1, v0)) \\/ (~IsMax(v2, v0) \\/ ~leq(v1, v2))) /\\ (~IsMax(v2, List.cons(v1, v0)) \\/ (IsMax(v2, v0) /\\ leq(v1, v2))))",
+        "component index 3"
+      ],
+      "interpretation": "The specification was strictly weakened along this dimension and still admits at least one implementation that satisfies it \u2014 meaning the spec does not constrain the predicate beyond what the weaker form requires.",
+      "model_description": "(synthetic \u2014 Phase F per-model witnesses populate only on the per-theorem sliced path; this spec landed in global mode)"
+    }
+  ],
+  "taxonomy": {},
+  "diagnostic_summary": "",
+  "elapsed_sec": 100.011
+}

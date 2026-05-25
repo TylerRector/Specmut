@@ -1,0 +1,59 @@
+{
+  "file": "phase3/generated/qwen/bintree/v2.lean",
+  "source": "llm",
+  "model": "qwen",
+  "task": "bintree",
+  "version": 2,
+  "parameters": {
+    "model_bound": 2,
+    "epsilon": 1.0
+  },
+  "analysis_mode": "global",
+  "average_tau": 0.0,
+  "min_tau": 0.0,
+  "max_tau": 0.0,
+  "tau_variance": 0.0,
+  "slice_count": 0,
+  "theorem_count": 1,
+  "analyzed_theorem_count": 1,
+  "skipped_theorem_count": 0,
+  "total_mutants": 1,
+  "surviving_mutants": 1,
+  "killed_mutants": 0,
+  "kill_rate": 0.0,
+  "weak_theorems": [
+    "(global)"
+  ],
+  "per_theorem": [
+    {
+      "name": "(global)",
+      "tau": 0.0,
+      "kill_rate": 0.0,
+      "surviving_mutants": 1,
+      "total_mutants": 1,
+      "contribution": "None",
+      "translated_theorem_names": [
+        "bstInsert_length"
+      ]
+    }
+  ],
+  "witnesses": [
+    {
+      "theorem": "bstInsert_length",
+      "mutant_class": "weakening",
+      "distance": 0.71875,
+      "preserved_properties": [
+        "every auto-selected implementation model satisfies both the original and this mutated axiom"
+      ],
+      "unconstrained_behaviors": [
+        "perturbed axiom: forall : Nat . forall : List_Nat . List.length(bstInsert(v1, v0)) = add(List.length(v0), succ(zero))",
+        "component index 0"
+      ],
+      "interpretation": "The specification was strictly weakened along this dimension and still admits at least one implementation that satisfies it \u2014 meaning the spec does not constrain the predicate beyond what the weaker form requires.",
+      "model_description": "(synthetic \u2014 Phase F per-model witnesses populate only on the per-theorem sliced path; this spec landed in global mode)"
+    }
+  ],
+  "taxonomy": {},
+  "diagnostic_summary": "",
+  "elapsed_sec": 3.214
+}

@@ -1,0 +1,15 @@
+{
+  "compile_success": true,
+  "typecheck_success": true,
+  "errors": [],
+  "warnings": [
+    ":14:8: warning: declaration uses `sorry`",
+    ":17:8: warning: declaration uses `sorry`"
+  ],
+  "elapsed_sec": 0.406,
+  "exit_code": 0,
+  "file": "phase3/generated/deepseek/bintree/v3.lean",
+  "model": "deepseek",
+  "task": "bintree",
+  "version": 3
+}
