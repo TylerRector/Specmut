@@ -1,0 +1,16 @@
+{
+  "compile_success": true,
+  "typecheck_success": true,
+  "errors": [],
+  "warnings": [
+    ":18:8: warning: declaration uses `sorry`",
+    ":38:8: warning: declaration uses `sorry`",
+    ":40:8: warning: declaration uses `sorry`"
+  ],
+  "elapsed_sec": 0.58,
+  "exit_code": 0,
+  "file": "phase3/benchmarks/tc/reference_analyzable.lean",
+  "model": "human",
+  "task": "tc",
+  "version": 0
+}

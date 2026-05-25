@@ -1,0 +1,44 @@
+{
+  "file": "phase3/generated/deepseek/bintree/v1.lean",
+  "source": "llm",
+  "model": "deepseek",
+  "task": "bintree",
+  "version": 1,
+  "parameters": {
+    "model_bound": 2,
+    "epsilon": 1.0
+  },
+  "analysis_mode": "global",
+  "average_tau": 0.0,
+  "min_tau": 0.0,
+  "max_tau": 0.0,
+  "tau_variance": 0.0,
+  "slice_count": 0,
+  "theorem_count": 1,
+  "analyzed_theorem_count": 1,
+  "skipped_theorem_count": 0,
+  "total_mutants": 0,
+  "surviving_mutants": 0,
+  "killed_mutants": 0,
+  "kill_rate": 0.0,
+  "weak_theorems": [
+    "(global)"
+  ],
+  "per_theorem": [
+    {
+      "name": "(global)",
+      "tau": 0.0,
+      "kill_rate": 0.0,
+      "surviving_mutants": 0,
+      "total_mutants": 0,
+      "contribution": "None",
+      "translated_theorem_names": [
+        "bstInsert_well_defined"
+      ]
+    }
+  ],
+  "witnesses": [],
+  "taxonomy": {},
+  "diagnostic_summary": "",
+  "elapsed_sec": 2.109
+}

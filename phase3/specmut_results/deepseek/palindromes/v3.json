@@ -1,0 +1,128 @@
+{
+  "file": "phase3/generated/deepseek/palindromes/v3.lean",
+  "source": "llm",
+  "model": "deepseek",
+  "task": "palindromes",
+  "version": 3,
+  "parameters": {
+    "model_bound": 2,
+    "epsilon": 1.0
+  },
+  "analysis_mode": "global",
+  "average_tau": 0.6048387096774194,
+  "min_tau": 0.6048387096774194,
+  "max_tau": 0.6048387096774194,
+  "tau_variance": 0.0,
+  "slice_count": 0,
+  "theorem_count": 2,
+  "analyzed_theorem_count": 2,
+  "skipped_theorem_count": 0,
+  "total_mutants": 124,
+  "surviving_mutants": 49,
+  "killed_mutants": 75,
+  "kill_rate": 0.6048387096774194,
+  "weak_theorems": [],
+  "per_theorem": [
+    {
+      "name": "(global)",
+      "tau": 0.6048387096774194,
+      "kill_rate": 0.6048387096774194,
+      "surviving_mutants": 49,
+      "total_mutants": 124,
+      "contribution": "None",
+      "translated_theorem_names": [
+        "rev_max_preserved",
+        "rev_self_max"
+      ]
+    }
+  ],
+  "witnesses": [
+    {
+      "theorem": "rev_max_preserved, rev_self_max",
+      "mutant_class": "weakening",
+      "distance": 0.023255813953488372,
+      "preserved_properties": [
+        "every auto-selected implementation model satisfies both the original and this mutated axiom"
+      ],
+      "unconstrained_behaviors": [
+        "perturbed axiom: forall : List_Nat . (IsMax(maxOf(rev(v0)), rev(v0)) \\/ ~IsMax(maxOf(v0), v0))",
+        "component index 1"
+      ],
+      "interpretation": "The specification was strictly weakened along this dimension and still admits at least one implementation that satisfies it \u2014 meaning the spec does not constrain the predicate beyond what the weaker form requires.",
+      "model_description": "(synthetic \u2014 Phase F per-model witnesses populate only on the per-theorem sliced path; this spec landed in global mode)"
+    },
+    {
+      "theorem": "rev_max_preserved, rev_self_max",
+      "mutant_class": "weakening",
+      "distance": 0.125,
+      "preserved_properties": [
+        "every auto-selected implementation model satisfies both the original and this mutated axiom"
+      ],
+      "unconstrained_behaviors": [
+        "perturbed axiom: forall : List_Nat . IsMax(maxOf(v0), rev(v0))",
+        "component index 0"
+      ],
+      "interpretation": "The specification was strictly weakened along this dimension and still admits at least one implementation that satisfies it \u2014 meaning the spec does not constrain the predicate beyond what the weaker form requires.",
+      "model_description": "(synthetic \u2014 Phase F per-model witnesses populate only on the per-theorem sliced path; this spec landed in global mode)"
+    },
+    {
+      "theorem": "rev_max_preserved, rev_self_max",
+      "mutant_class": "weakening",
+      "distance": 0.664,
+      "preserved_properties": [
+        "every auto-selected implementation model satisfies both the original and this mutated axiom"
+      ],
+      "unconstrained_behaviors": [
+        "perturbed axiom: forall : Nat . ((true \\/ ~IsMax(v0, List.nil)) /\\ (false \\/ IsMax(v0, List.nil)))",
+        "component index 2"
+      ],
+      "interpretation": "The specification was strictly weakened along this dimension and still admits at least one implementation that satisfies it \u2014 meaning the spec does not constrain the predicate beyond what the weaker form requires.",
+      "model_description": "(synthetic \u2014 Phase F per-model witnesses populate only on the per-theorem sliced path; this spec landed in global mode)"
+    },
+    {
+      "theorem": "rev_max_preserved, rev_self_max",
+      "mutant_class": "weakening",
+      "distance": 0.9635416666666666,
+      "preserved_properties": [
+        "every auto-selected implementation model satisfies both the original and this mutated axiom"
+      ],
+      "unconstrained_behaviors": [
+        "perturbed axiom: forall : Nat . forall : Nat . forall : List_Nat . ((IsMax(v2, List.cons(v1, v0)) \\/ (~IsMax(v2, v0) \\/ ~leq(v1, v2))) /\\ (~IsMax(v2, List.cons(v1, v0)) \\/ (IsMax(v2, v0) /\\ leq(v1, v2))))",
+        "component index 3"
+      ],
+      "interpretation": "The specification was strictly weakened along this dimension and still admits at least one implementation that satisfies it \u2014 meaning the spec does not constrain the predicate beyond what the weaker form requires.",
+      "model_description": "(synthetic \u2014 Phase F per-model witnesses populate only on the per-theorem sliced path; this spec landed in global mode)"
+    },
+    {
+      "theorem": "rev_max_preserved, rev_self_max",
+      "mutant_class": "strengthening",
+      "distance": 0.9880952380952381,
+      "preserved_properties": [
+        "every auto-selected implementation model satisfies both the original and this mutated axiom"
+      ],
+      "unconstrained_behaviors": [
+        "perturbed axiom: forall : Nat . ~leq(v0, v0)",
+        "component index 0"
+      ],
+      "interpretation": "A strictly stronger variant of the original axiom remains satisfiable: the auto-implementation models do not distinguish between the spec and its strengthened form, suggesting the spec admits implementations that happen to satisfy the stronger property by accident.",
+      "model_description": "(synthetic \u2014 Phase F per-model witnesses populate only on the per-theorem sliced path; this spec landed in global mode)"
+    },
+    {
+      "theorem": "rev_max_preserved, rev_self_max",
+      "mutant_class": "strengthening",
+      "distance": 0.9880952380952381,
+      "preserved_properties": [
+        "every auto-selected implementation model satisfies both the original and this mutated axiom"
+      ],
+      "unconstrained_behaviors": [
+        "perturbed axiom: forall : Nat . forall : Nat . ~leq(v0, v1)",
+        "component index 0"
+      ],
+      "interpretation": "A strictly stronger variant of the original axiom remains satisfiable: the auto-implementation models do not distinguish between the spec and its strengthened form, suggesting the spec admits implementations that happen to satisfy the stronger property by accident.",
+      "model_description": "(synthetic \u2014 Phase F per-model witnesses populate only on the per-theorem sliced path; this spec landed in global mode)"
+    }
+  ],
+  "taxonomy": {},
+  "diagnostic_summary": "",
+  "elapsed_sec": 23.488
+}

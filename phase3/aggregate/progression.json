@@ -1,0 +1,184 @@
+{
+  "trajectories": [
+    {
+      "task": "bintree",
+      "model": "deepseek",
+      "points": [
+        {
+          "version": 1,
+          "tau": 0.0,
+          "kill_rate": 0.0,
+          "weak_theorems": 1,
+          "compile_success": true,
+          "analysis_mode": "global"
+        },
+        {
+          "version": 2,
+          "tau": 0.2727272727272727,
+          "kill_rate": 0.2727272727272727,
+          "weak_theorems": 1,
+          "compile_success": true,
+          "analysis_mode": "global"
+        },
+        {
+          "version": 3,
+          "tau": 0.9493670886075949,
+          "kill_rate": 0.9493670886075949,
+          "weak_theorems": 0,
+          "compile_success": true,
+          "analysis_mode": "global"
+        }
+      ]
+    },
+    {
+      "task": "bintree",
+      "model": "qwen",
+      "points": [
+        {
+          "version": 1,
+          "tau": 0.0,
+          "kill_rate": 0.0,
+          "weak_theorems": 0,
+          "compile_success": true,
+          "analysis_mode": "failed"
+        },
+        {
+          "version": 2,
+          "tau": 0.0,
+          "kill_rate": 0.0,
+          "weak_theorems": 1,
+          "compile_success": true,
+          "analysis_mode": "global"
+        },
+        {
+          "version": 3,
+          "tau": 0.2727272727272727,
+          "kill_rate": 0.2727272727272727,
+          "weak_theorems": 1,
+          "compile_success": true,
+          "analysis_mode": "global"
+        }
+      ]
+    },
+    {
+      "task": "palindromes",
+      "model": "deepseek",
+      "points": [
+        {
+          "version": 1,
+          "tau": 0.0,
+          "kill_rate": 0.0,
+          "weak_theorems": 1,
+          "compile_success": true,
+          "analysis_mode": "global"
+        },
+        {
+          "version": 2,
+          "tau": 0.2727272727272727,
+          "kill_rate": 0.2727272727272727,
+          "weak_theorems": 1,
+          "compile_success": true,
+          "analysis_mode": "global"
+        },
+        {
+          "version": 3,
+          "tau": 0.6048387096774194,
+          "kill_rate": 0.6048387096774194,
+          "weak_theorems": 0,
+          "compile_success": true,
+          "analysis_mode": "global"
+        }
+      ]
+    },
+    {
+      "task": "palindromes",
+      "model": "qwen",
+      "points": [
+        {
+          "version": 1,
+          "tau": 0.0,
+          "kill_rate": 0.0,
+          "weak_theorems": 0,
+          "compile_success": true,
+          "analysis_mode": "failed"
+        },
+        {
+          "version": 2,
+          "tau": 0.2727272727272727,
+          "kill_rate": 0.2727272727272727,
+          "weak_theorems": 1,
+          "compile_success": true,
+          "analysis_mode": "global"
+        },
+        {
+          "version": 3,
+          "tau": 0.6060606060606061,
+          "kill_rate": 0.6060606060606061,
+          "weak_theorems": 0,
+          "compile_success": true,
+          "analysis_mode": "global"
+        }
+      ]
+    },
+    {
+      "task": "tc",
+      "model": "deepseek",
+      "points": [
+        {
+          "version": 1,
+          "tau": 0.0,
+          "kill_rate": 0.0,
+          "weak_theorems": 1,
+          "compile_success": true,
+          "analysis_mode": "global"
+        },
+        {
+          "version": 2,
+          "tau": 0.9523809523809523,
+          "kill_rate": 0.9523809523809523,
+          "weak_theorems": 0,
+          "compile_success": true,
+          "analysis_mode": "global"
+        },
+        {
+          "version": 3,
+          "tau": 0.9523809523809523,
+          "kill_rate": 0.9523809523809523,
+          "weak_theorems": 0,
+          "compile_success": true,
+          "analysis_mode": "global"
+        }
+      ]
+    },
+    {
+      "task": "tc",
+      "model": "qwen",
+      "points": [
+        {
+          "version": 1,
+          "tau": 0.0,
+          "kill_rate": 0.0,
+          "weak_theorems": 0,
+          "compile_success": true,
+          "analysis_mode": "failed"
+        },
+        {
+          "version": 2,
+          "tau": 0.0,
+          "kill_rate": 0.0,
+          "weak_theorems": 1,
+          "compile_success": true,
+          "analysis_mode": "global"
+        },
+        {
+          "version": 3,
+          "tau": 0.9523809523809523,
+          "kill_rate": 0.9523809523809523,
+          "weak_theorems": 0,
+          "compile_success": true,
+          "analysis_mode": "global"
+        }
+      ]
+    }
+  ]
+}

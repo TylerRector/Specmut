@@ -1,0 +1,253 @@
+{
+  "tasks": [
+    {
+      "task": "bintree",
+      "comparisons": [
+        {
+          "source": "human_reference",
+          "compile_success": true,
+          "analyzable_compile_success": true,
+          "tau": 0.0,
+          "kill_rate": 0.0,
+          "theorem_count": 0,
+          "weak_theorems": 0,
+          "surviving_mutants": 0,
+          "total_mutants": 0,
+          "analysis_mode": "failed"
+        },
+        {
+          "source": "deepseek/v1",
+          "compile_success": true,
+          "tau": 0.0,
+          "kill_rate": 0.0,
+          "theorem_count": 1,
+          "weak_theorems": 1,
+          "surviving_mutants": 0,
+          "total_mutants": 0,
+          "analysis_mode": "global"
+        },
+        {
+          "source": "deepseek/v2",
+          "compile_success": true,
+          "tau": 0.2727272727272727,
+          "kill_rate": 0.2727272727272727,
+          "theorem_count": 1,
+          "weak_theorems": 1,
+          "surviving_mutants": 40,
+          "total_mutants": 55,
+          "analysis_mode": "global"
+        },
+        {
+          "source": "deepseek/v3",
+          "compile_success": true,
+          "tau": 0.9493670886075949,
+          "kill_rate": 0.9493670886075949,
+          "theorem_count": 2,
+          "weak_theorems": 0,
+          "surviving_mutants": 4,
+          "total_mutants": 79,
+          "analysis_mode": "global"
+        },
+        {
+          "source": "qwen/v1",
+          "compile_success": true,
+          "tau": 0.0,
+          "kill_rate": 0.0,
+          "theorem_count": 0,
+          "weak_theorems": 0,
+          "surviving_mutants": 0,
+          "total_mutants": 0,
+          "analysis_mode": "failed"
+        },
+        {
+          "source": "qwen/v2",
+          "compile_success": true,
+          "tau": 0.0,
+          "kill_rate": 0.0,
+          "theorem_count": 1,
+          "weak_theorems": 1,
+          "surviving_mutants": 1,
+          "total_mutants": 1,
+          "analysis_mode": "global"
+        },
+        {
+          "source": "qwen/v3",
+          "compile_success": true,
+          "tau": 0.2727272727272727,
+          "kill_rate": 0.2727272727272727,
+          "theorem_count": 1,
+          "weak_theorems": 1,
+          "surviving_mutants": 40,
+          "total_mutants": 55,
+          "analysis_mode": "global"
+        }
+      ]
+    },
+    {
+      "task": "palindromes",
+      "comparisons": [
+        {
+          "source": "human_reference",
+          "compile_success": true,
+          "analyzable_compile_success": true,
+          "tau": 0.0,
+          "kill_rate": 0.0,
+          "theorem_count": 0,
+          "weak_theorems": 0,
+          "surviving_mutants": 0,
+          "total_mutants": 0,
+          "analysis_mode": "failed"
+        },
+        {
+          "source": "deepseek/v1",
+          "compile_success": true,
+          "tau": 0.0,
+          "kill_rate": 0.0,
+          "theorem_count": 1,
+          "weak_theorems": 1,
+          "surviving_mutants": 0,
+          "total_mutants": 0,
+          "analysis_mode": "global"
+        },
+        {
+          "source": "deepseek/v2",
+          "compile_success": true,
+          "tau": 0.2727272727272727,
+          "kill_rate": 0.2727272727272727,
+          "theorem_count": 1,
+          "weak_theorems": 1,
+          "surviving_mutants": 40,
+          "total_mutants": 55,
+          "analysis_mode": "global"
+        },
+        {
+          "source": "deepseek/v3",
+          "compile_success": true,
+          "tau": 0.6048387096774194,
+          "kill_rate": 0.6048387096774194,
+          "theorem_count": 2,
+          "weak_theorems": 0,
+          "surviving_mutants": 49,
+          "total_mutants": 124,
+          "analysis_mode": "global"
+        },
+        {
+          "source": "qwen/v1",
+          "compile_success": true,
+          "tau": 0.0,
+          "kill_rate": 0.0,
+          "theorem_count": 0,
+          "weak_theorems": 0,
+          "surviving_mutants": 0,
+          "total_mutants": 0,
+          "analysis_mode": "failed"
+        },
+        {
+          "source": "qwen/v2",
+          "compile_success": true,
+          "tau": 0.2727272727272727,
+          "kill_rate": 0.2727272727272727,
+          "theorem_count": 1,
+          "weak_theorems": 1,
+          "surviving_mutants": 40,
+          "total_mutants": 55,
+          "analysis_mode": "global"
+        },
+        {
+          "source": "qwen/v3",
+          "compile_success": true,
+          "tau": 0.6060606060606061,
+          "kill_rate": 0.6060606060606061,
+          "theorem_count": 1,
+          "weak_theorems": 0,
+          "surviving_mutants": 39,
+          "total_mutants": 99,
+          "analysis_mode": "global"
+        }
+      ]
+    },
+    {
+      "task": "tc",
+      "comparisons": [
+        {
+          "source": "human_reference",
+          "compile_success": true,
+          "analyzable_compile_success": true,
+          "tau": 0.0,
+          "kill_rate": 0.0,
+          "theorem_count": 0,
+          "weak_theorems": 0,
+          "surviving_mutants": 0,
+          "total_mutants": 0,
+          "analysis_mode": "failed"
+        },
+        {
+          "source": "deepseek/v1",
+          "compile_success": true,
+          "tau": 0.0,
+          "kill_rate": 0.0,
+          "theorem_count": 1,
+          "weak_theorems": 1,
+          "surviving_mutants": 0,
+          "total_mutants": 0,
+          "analysis_mode": "global"
+        },
+        {
+          "source": "deepseek/v2",
+          "compile_success": true,
+          "tau": 0.9523809523809523,
+          "kill_rate": 0.9523809523809523,
+          "theorem_count": 1,
+          "weak_theorems": 0,
+          "surviving_mutants": 3,
+          "total_mutants": 63,
+          "analysis_mode": "global"
+        },
+        {
+          "source": "deepseek/v3",
+          "compile_success": true,
+          "tau": 0.9523809523809523,
+          "kill_rate": 0.9523809523809523,
+          "theorem_count": 2,
+          "weak_theorems": 0,
+          "surviving_mutants": 3,
+          "total_mutants": 63,
+          "analysis_mode": "global"
+        },
+        {
+          "source": "qwen/v1",
+          "compile_success": true,
+          "tau": 0.0,
+          "kill_rate": 0.0,
+          "theorem_count": 0,
+          "weak_theorems": 0,
+          "surviving_mutants": 0,
+          "total_mutants": 0,
+          "analysis_mode": "failed"
+        },
+        {
+          "source": "qwen/v2",
+          "compile_success": true,
+          "tau": 0.0,
+          "kill_rate": 0.0,
+          "theorem_count": 1,
+          "weak_theorems": 1,
+          "surviving_mutants": 0,
+          "total_mutants": 0,
+          "analysis_mode": "global"
+        },
+        {
+          "source": "qwen/v3",
+          "compile_success": true,
+          "tau": 0.9523809523809523,
+          "kill_rate": 0.9523809523809523,
+          "theorem_count": 1,
+          "weak_theorems": 0,
+          "surviving_mutants": 3,
+          "total_mutants": 63,
+          "analysis_mode": "global"
+        }
+      ]
+    }
+  ]
+}

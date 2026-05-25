@@ -1,0 +1,16 @@
+{
+  "compile_success": true,
+  "typecheck_success": true,
+  "errors": [],
+  "warnings": [
+    ":29:18: warning: unused variable `value`",
+    ":164:23: warning: unused variable `v`",
+    ":165:23: warning: unused variable `v`"
+  ],
+  "elapsed_sec": 0.85,
+  "exit_code": 0,
+  "file": "phase3/benchmarks/bintree/reference.lean",
+  "model": "human",
+  "task": "bintree",
+  "version": 0
+}

@@ -1,0 +1,15 @@
+{
+  "compile_success": true,
+  "typecheck_success": true,
+  "errors": [],
+  "warnings": [
+    ":13:8: warning: declaration uses `sorry`",
+    ":16:8: warning: declaration uses `sorry`"
+  ],
+  "elapsed_sec": 0.431,
+  "exit_code": 0,
+  "file": "phase3/generated/deepseek/palindromes/v3.lean",
+  "model": "deepseek",
+  "task": "palindromes",
+  "version": 3
+}

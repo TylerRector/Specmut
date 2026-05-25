@@ -1,0 +1,21 @@
+{
+  "compile_success": true,
+  "typecheck_success": true,
+  "errors": [],
+  "warnings": [
+    ":9:18: warning: unused variable `value`",
+    ":55:23: warning: unused variable `v`",
+    ":56:23: warning: unused variable `v`",
+    ":72:8: warning: declaration uses `sorry`",
+    ":75:8: warning: declaration uses `sorry`",
+    ":96:8: warning: declaration uses `sorry`",
+    ":98:8: warning: declaration uses `sorry`",
+    ":100:8: warning: declaration uses `sorry`"
+  ],
+  "elapsed_sec": 0.744,
+  "exit_code": 0,
+  "file": "phase3/benchmarks/bintree/reference_analyzable.lean",
+  "model": "human",
+  "task": "bintree",
+  "version": 0
+}

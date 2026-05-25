@@ -1,0 +1,12 @@
+{
+  "compile_success": true,
+  "typecheck_success": true,
+  "errors": [],
+  "warnings": [],
+  "elapsed_sec": 0.433,
+  "exit_code": 0,
+  "file": "phase3/generated/deepseek/bintree/v1.lean",
+  "model": "deepseek",
+  "task": "bintree",
+  "version": 1
+}

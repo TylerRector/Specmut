@@ -1,0 +1,14 @@
+{
+  "compile_success": true,
+  "typecheck_success": true,
+  "errors": [],
+  "warnings": [
+    ":13:8: warning: declaration uses `sorry`"
+  ],
+  "elapsed_sec": 0.46,
+  "exit_code": 0,
+  "file": "phase3/generated/qwen/palindromes/v2.lean",
+  "model": "qwen",
+  "task": "palindromes",
+  "version": 2
+}
