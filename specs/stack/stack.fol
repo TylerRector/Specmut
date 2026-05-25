@@ -1,0 +1,11 @@
+-- Stack ADT specification.
+sort Elem.
+sort Stack.
+func push : Elem, Stack -> Stack.
+func pop : Stack -> Stack.
+func top : Stack -> Elem.
+rel empty : Stack.
+
+axiom forall e : Elem . forall s : Stack . ~empty(push(e, s)).
+axiom forall e : Elem . forall s : Stack . top(push(e, s)) = e.
+axiom forall e : Elem . forall s : Stack . pop(push(e, s)) = s.

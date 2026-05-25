@@ -1,0 +1,13 @@
+model Elem = {a, b}.
+leq(a, a) = true.
+leq(a, b) = true.
+leq(b, a) = false.
+leq(b, b) = true.
+sorted_seq(a) = true.
+sorted_seq(b) = true.
+perm(a, a) = true.
+perm(a, b) = false.
+perm(b, a) = false.
+perm(b, b) = true.
+output(a) = a.
+output(b) = b.

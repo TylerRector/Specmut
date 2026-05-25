@@ -1,0 +1,9 @@
+-- Sorting specification: output is a sorted permutation of input.
+sort Elem.
+rel leq : Elem, Elem.
+rel sorted_seq : Elem.
+rel perm : Elem, Elem.
+func output : Elem -> Elem.
+
+axiom forall x : Elem . sorted_seq(output(x)).
+axiom forall x : Elem . perm(x, output(x)).

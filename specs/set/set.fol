@@ -1,0 +1,12 @@
+-- A minimal Set ADT — tests the desugaring pipeline (-> and <->).
+sort Elem.
+sort SetT.
+func insert : Elem, SetT -> SetT.
+func remove : Elem, SetT -> SetT.
+rel member : Elem, SetT.
+rel empty_set : SetT.
+
+axiom forall e : Elem . forall s : SetT . member(e, insert(e, s)).
+axiom forall e1 : Elem . forall e2 : Elem . forall s : SetT .
+  e1 != e2 -> (member(e1, insert(e2, s)) <-> member(e1, s)).
+axiom forall e : Elem . forall s : SetT . ~member(e, remove(e, s)).

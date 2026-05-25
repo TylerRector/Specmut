@@ -1,0 +1,28 @@
+-- Binary search correctness specification.
+-- Domain: an array of values indexed by Idx, target value v of sort Val.
+-- The search function returns an Idx (a real implementation would
+-- return Option<Idx>; we model "not found" as a sentinel value
+-- captured via the `present` relation).
+
+sort Idx.
+sort Val.
+
+func at_idx : Idx -> Val.       -- arr[i]
+func search : Val -> Idx.       -- binary search result
+
+rel present : Val.              -- v occurs somewhere in the array
+rel sorted_arr : Idx.           -- placeholder: the array is sorted
+                                -- (treated as a flag relation since we
+                                -- can't write "for all i j: at_idx(i) <= at_idx(j)"
+                                -- without an order on Val in the signature).
+rel within_bounds : Idx.         -- index is in [0, length)
+
+-- C1. If v is in the array, search(v) returns an index whose value equals v.
+axiom forall v : Val . present(v) -> at_idx(search(v)) = v.
+
+-- C2. Whenever search is called, its result lies in the legal index range.
+axiom forall v : Val . within_bounds(search(v)).
+
+-- C3. The result lives in the sorted region (sanity property for
+-- the precondition: callers must pass a sorted array).
+axiom forall v : Val . sorted_arr(search(v)).
