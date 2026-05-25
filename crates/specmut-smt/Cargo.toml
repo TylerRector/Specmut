@@ -1,0 +1,15 @@
+[package]
+name = "specmut-smt"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+description = "Z3 / SMT bridge for the specmut framework."
+
+[dependencies]
+specmut-core = { path = "../specmut-core" }
+z3 = { version = "0.12", features = ["static-link-z3"] }
+thiserror = { workspace = true }
+
+[lints]
+workspace = true

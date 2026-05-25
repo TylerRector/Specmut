@@ -1,0 +1,125 @@
+{"warnings": [],
+ "version": 1,
+ "theorems":
+ [{"name": "lit_eval",
+   "hypotheses": [],
+   "conclusion":
+   {"var": "n",
+    "sort": "Nat",
+    "kind": "forall",
+    "body":
+    {"right": {"name": "n", "kind": "var"},
+     "left":
+     {"kind": "app",
+      "fn": "eval",
+      "args":
+      [{"kind": "app",
+        "fn": "Expr.lit",
+        "args": [{"name": "n", "kind": "var"}]}]},
+     "kind": "eq"}}},
+  {"name": "eval_add",
+   "hypotheses": [],
+   "conclusion":
+   {"var": "e1",
+    "sort": "Expr",
+    "kind": "forall",
+    "body":
+    {"var": "e2",
+     "sort": "Expr",
+     "kind": "forall",
+     "body":
+     {"right":
+      {"kind": "app",
+       "fn": "add",
+       "args":
+       [{"kind": "app", "fn": "eval", "args": [{"name": "e1", "kind": "var"}]},
+        {"kind": "app",
+         "fn": "eval",
+         "args": [{"name": "e2", "kind": "var"}]}]},
+      "left":
+      {"kind": "app",
+       "fn": "eval",
+       "args":
+       [{"kind": "app",
+         "fn": "Expr.add",
+         "args":
+         [{"name": "e1", "kind": "var"}, {"name": "e2", "kind": "var"}]}]},
+      "kind": "eq"}}}}],
+ "source_file": "crates/specmut-lean/lean/test_fixtures/multi_inductive.lean",
+ "sorts":
+ [{"num_params": 0, "num_ctors": 3, "name": "Expr", "kind": "inductive"}],
+ "predicates":
+ [{"params": [{"sort": "Expr", "name": "_"}],
+   "name": "isLit",
+   "equations":
+   [{"vars": [{"sort": "Nat", "name": "n"}],
+     "rhs": {"kind": "true"},
+     "lhs":
+     {"kind": "app",
+      "fn": "isLit",
+      "args":
+      [{"kind": "app",
+        "fn": "Expr.lit",
+        "args": [{"name": "n", "kind": "var"}]}]}},
+    {"vars":
+     [{"sort": "Expr", "name": "_"}, {"sort": "_Unknown", "name": "x_2"}],
+     "rhs": {"kind": "false"},
+     "lhs":
+     {"kind": "app", "fn": "isLit", "args": [{"name": "_", "kind": "var"}]}}],
+   "body":
+   {"kind": "app",
+    "fn": "isLit.match_1",
+    "args":
+    [{"kind": "unsupported", "description": "unexpected lambda in proposition"},
+     {"name": "_", "kind": "var"},
+     {"kind": "unsupported", "description": "unexpected lambda in proposition"},
+     {"kind": "unsupported",
+      "description": "unexpected lambda in proposition"}]}}],
+ "functions":
+ [{"name": "eval",
+   "equations":
+   [{"vars": [{"sort": "Nat", "name": "n"}],
+     "rhs": {"name": "n", "kind": "var"},
+     "lhs":
+     {"kind": "app",
+      "fn": "eval",
+      "args":
+      [{"kind": "app",
+        "fn": "Expr.lit",
+        "args": [{"name": "n", "kind": "var"}]}]}},
+    {"vars": [{"sort": "Expr", "name": "e1"}, {"sort": "Expr", "name": "e2"}],
+     "rhs":
+     {"kind": "app",
+      "fn": "add",
+      "args":
+      [{"kind": "app", "fn": "eval", "args": [{"name": "e1", "kind": "var"}]},
+       {"kind": "app", "fn": "eval", "args": [{"name": "e2", "kind": "var"}]}]},
+     "lhs":
+     {"kind": "app",
+      "fn": "eval",
+      "args":
+      [{"kind": "app",
+        "fn": "Expr.add",
+        "args":
+        [{"name": "e1", "kind": "var"}, {"name": "e2", "kind": "var"}]}]}},
+    {"vars": [{"sort": "Expr", "name": "e1"}, {"sort": "Expr", "name": "e2"}],
+     "rhs":
+     {"kind": "app",
+      "fn": "mul",
+      "args":
+      [{"kind": "app", "fn": "eval", "args": [{"name": "e1", "kind": "var"}]},
+       {"kind": "app", "fn": "eval", "args": [{"name": "e2", "kind": "var"}]}]},
+     "lhs":
+     {"kind": "app",
+      "fn": "eval",
+      "args":
+      [{"kind": "app",
+        "fn": "Expr.mul",
+        "args":
+        [{"name": "e1", "kind": "var"}, {"name": "e2", "kind": "var"}]}]}}],
+   "domain": ["Expr"],
+   "codomain": "Nat"}],
+ "constructors":
+ [{"sort": "Expr", "name": "Expr.lit", "fields": ["Nat"]},
+  {"sort": "Expr", "name": "Expr.add", "fields": ["Expr", "Expr"]},
+  {"sort": "Expr", "name": "Expr.mul", "fields": ["Expr", "Expr"]}]}

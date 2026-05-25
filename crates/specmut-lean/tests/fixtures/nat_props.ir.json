@@ -1,0 +1,92 @@
+{"warnings": [],
+ "version": 1,
+ "theorems":
+ [{"name": "even_or_odd",
+   "hypotheses": [],
+   "conclusion":
+   {"var": "n",
+    "sort": "Nat",
+    "kind": "forall",
+    "body":
+    {"right":
+     {"kind": "app", "fn": "Odd", "args": [{"name": "n", "kind": "var"}]},
+     "left":
+     {"kind": "app", "fn": "Even", "args": [{"name": "n", "kind": "var"}]},
+     "kind": "or"}}},
+  {"name": "even_plus_two",
+   "hypotheses": [],
+   "conclusion":
+   {"var": "n",
+    "sort": "Nat",
+    "kind": "forall",
+    "body":
+    {"right":
+     {"kind": "app",
+      "fn": "Even",
+      "args":
+      [{"kind": "app",
+        "fn": "add",
+        "args":
+        [{"name": "n", "kind": "var"}, {"value": 2, "kind": "nat_lit"}]}]},
+     "left":
+     {"kind": "app", "fn": "Even", "args": [{"name": "n", "kind": "var"}]},
+     "kind": "implies"}}},
+  {"name": "zero_even",
+   "hypotheses": [],
+   "conclusion":
+   {"kind": "app", "fn": "Even", "args": [{"value": 0, "kind": "nat_lit"}]}},
+  {"name": "one_odd",
+   "hypotheses": [],
+   "conclusion":
+   {"kind": "app", "fn": "Odd", "args": [{"value": 1, "kind": "nat_lit"}]}}],
+ "source_file": "crates/specmut-lean/lean/test_fixtures/nat_props.lean",
+ "sorts": [],
+ "predicates":
+ [{"params": [{"sort": "Nat", "name": "n"}],
+   "name": "Odd",
+   "equations":
+   [{"vars": [{"sort": "Nat", "name": "n"}],
+     "rhs":
+     {"kind": "not",
+      "body":
+      {"kind": "app", "fn": "Even", "args": [{"name": "n", "kind": "var"}]}},
+     "lhs":
+     {"kind": "app", "fn": "Odd", "args": [{"name": "n", "kind": "var"}]}}],
+   "body":
+   {"kind": "not",
+    "body":
+    {"kind": "app", "fn": "Even", "args": [{"name": "n", "kind": "var"}]}}},
+  {"params": [{"sort": "Nat", "name": "_"}],
+   "name": "Even",
+   "equations":
+   [{"vars": [],
+     "rhs": {"kind": "true"},
+     "lhs":
+     {"kind": "app", "fn": "Even", "args": [{"value": 0, "kind": "nat_lit"}]}},
+    {"vars": [],
+     "rhs": {"kind": "false"},
+     "lhs":
+     {"kind": "app", "fn": "Even", "args": [{"value": 1, "kind": "nat_lit"}]}},
+    {"vars": [{"sort": "Nat", "name": "n"}],
+     "rhs":
+     {"kind": "app", "fn": "Even", "args": [{"name": "n", "kind": "var"}]},
+     "lhs":
+     {"kind": "app",
+      "fn": "Even",
+      "args":
+      [{"kind": "app",
+        "fn": "Nat.succ",
+        "args":
+        [{"kind": "app",
+          "fn": "Nat.succ",
+          "args": [{"name": "n", "kind": "var"}]}]}]}}],
+   "body":
+   {"kind": "app",
+    "fn": "Nat.brecOn",
+    "args":
+    [{"kind": "unsupported", "description": "unexpected lambda in proposition"},
+     {"name": "_", "kind": "var"},
+     {"kind": "unsupported",
+      "description": "unexpected lambda in proposition"}]}}],
+ "functions": [],
+ "constructors": []}

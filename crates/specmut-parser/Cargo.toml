@@ -1,0 +1,16 @@
+[package]
+name = "specmut-parser"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+description = "Parsers for specmut input formats: FOL and a Lean 4 surface-syntax extractor."
+
+[dependencies]
+specmut-core = { path = "../specmut-core" }
+nom = { workspace = true }
+tempfile = "3"
+thiserror = { workspace = true }
+
+[lints]
+workspace = true

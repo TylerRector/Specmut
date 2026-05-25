@@ -1,0 +1,1160 @@
+{"warnings":
+ ["elaboration error: specs/sorting/sort_lean.lean:8:54: error: failed to prove index is valid, possible solutions:\n  - Use `have`-expressions to prove the index is valid\n  - Use `a[i]!` notation instead, runtime check is performed, and 'Panic' error message is produced if index is not valid\n  - Use `a[i]?` notation instead, result is an `Option` type\n  - Use `a[i]'h` notation instead, where `h` is a proof that index is valid\nl : List Nat\ni j : ?m.5\n⊢ ?m.23 i j l i\n",
+  "elaboration error: specs/sorting/sort_lean.lean:8:61: error: failed to prove index is valid, possible solutions:\n  - Use `have`-expressions to prove the index is valid\n  - Use `a[i]!` notation instead, runtime check is performed, and 'Panic' error message is produced if index is not valid\n  - Use `a[i]?` notation instead, result is an `Option` type\n  - Use `a[i]'h` notation instead, where `h` is a proof that index is valid\nl : List Nat\ni j : ?m.5\n⊢ ?m.26 i j l j\n",
+  "elaboration error: specs/sorting/sort_lean.lean:9:63: error: failed to prove index is valid, possible solutions:\n  - Use `have`-expressions to prove the index is valid\n  - Use `a[i]!` notation instead, runtime check is performed, and 'Panic' error message is produced if index is not valid\n  - Use `a[i]?` notation instead, result is an `Option` type\n  - Use `a[i]'h` notation instead, where `h` is a proof that index is valid\nl : List Nat\ni : Nat\n⊢ i < l.length\n",
+  "elaboration error: specs/sorting/sort_lean.lean:9:70: error: failed to prove index is valid, possible solutions:\n  - Use `have`-expressions to prove the index is valid\n  - Use `a[i]!` notation instead, runtime check is performed, and 'Panic' error message is produced if index is not valid\n  - Use `a[i]?` notation instead, result is an `Option` type\n  - Use `a[i]'h` notation instead, where `h` is a proof that index is valid\nl : List Nat\ni : Nat\n⊢ i + 1 < l.length\n",
+  "elaboration error: specs/sorting/sort_lean.lean:13:39: error: Function expected at\n  insertionSort\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  l\n\nHint: The identifier `insertionSort` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.\n",
+  "elaboration error: specs/sorting/sort_lean.lean:13:69: error: Function expected at\n  insertionSort\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  l\n\nHint: The identifier `insertionSort` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.\n",
+  "elaboration error: specs/sorting/sort_lean.lean:14:39: error: Function expected at\n  mergeSort\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  l\n\nHint: The identifier `mergeSort` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.\n",
+  "elaboration error: specs/sorting/sort_lean.lean:14:65: error: Function expected at\n  mergeSort\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  l\n\nHint: The identifier `mergeSort` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.\n",
+  "elaboration error: specs/sorting/sort_lean.lean:15:39: error: Function expected at\n  heapSort\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  l\n\nHint: The identifier `heapSort` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.\n",
+  "elaboration error: specs/sorting/sort_lean.lean:15:64: error: Function expected at\n  heapSort\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  l\n\nHint: The identifier `heapSort` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.\n"],
+ "version": 1,
+ "theorems":
+ [{"name": "sort_spec_v1",
+   "hypotheses": [],
+   "conclusion":
+   {"var": "_",
+    "sort": "_Sort",
+    "kind": "forall",
+    "body":
+    {"right":
+     {"var": "l",
+      "sort": "List_Nat",
+      "kind": "forall",
+      "body":
+      {"right":
+       {"kind": "app",
+        "fn": "Perm_v1",
+        "args":
+        [{"name": "l", "kind": "var"},
+         {"kind": "app",
+          "fn": "sorryAx",
+          "args":
+          [{"right":
+            {"kind": "app",
+             "fn": "List",
+             "args": [{"kind": "app", "fn": "Nat", "args": []}]},
+            "left": {"kind": "app", "fn": "Unit", "args": []},
+            "kind": "implies"},
+           {"kind": "app", "fn": "Bool.true", "args": []},
+           {"kind": "app",
+            "fn": "Function.const",
+            "args":
+            [{"kind": "app", "fn": "Unit", "args": []},
+             {"kind": "app", "fn": "Lean.Name", "args": []},
+             {"kind": "app", "fn": "Unit.unit", "args": []},
+             {"kind": "app",
+              "fn": "Lean.Name.num",
+              "args":
+              [{"kind": "app",
+                "fn": "Lean.Name.str",
+                "args":
+                [{"kind": "app",
+                  "fn": "Lean.Name.str",
+                  "args":
+                  [{"kind": "app",
+                    "fn": "Lean.Name.num",
+                    "args":
+                    [{"kind": "app",
+                      "fn": "Lean.Name.str",
+                      "args":
+                      [{"kind": "app",
+                        "fn": "Lean.Name.str",
+                        "args":
+                        [{"kind": "app",
+                          "fn": "Lean.Name.num",
+                          "args":
+                          [{"kind": "app",
+                            "fn": "Lean.Name.num",
+                            "args":
+                            [{"kind": "app",
+                              "fn": "Lean.Name.num",
+                              "args":
+                              [{"kind": "app",
+                                "fn": "Lean.Name.num",
+                                "args":
+                                [{"kind": "app",
+                                  "fn": "Lean.Name.num",
+                                  "args":
+                                  [{"kind": "app",
+                                    "fn": "Lean.Name.num",
+                                    "args":
+                                    [{"kind": "app",
+                                      "fn": "Lean.Name.anonymous",
+                                      "args": []},
+                                     {"value": 13, "kind": "nat_lit"}]},
+                                   {"value": 69, "kind": "nat_lit"}]},
+                                 {"value": 13, "kind": "nat_lit"}]},
+                               {"value": 84, "kind": "nat_lit"}]},
+                             {"value": 69, "kind": "nat_lit"}]},
+                           {"value": 84, "kind": "nat_lit"}]},
+                         {"kind": "app", "fn": "\"_sorry\"", "args": []}]},
+                       {"kind": "app", "fn": "\"_@\"", "args": []}]},
+                     {"value": 3793697375, "kind": "nat_lit"}]},
+                   {"kind": "app", "fn": "\"_hygCtx\"", "args": []}]},
+                 {"kind": "app", "fn": "\"_hyg\"", "args": []}]},
+               {"value": 38, "kind": "nat_lit"}]}]}]}]},
+       "left":
+       {"kind": "app",
+        "fn": "Sorted_v1",
+        "args":
+        [{"kind": "app",
+          "fn": "sorryAx",
+          "args":
+          [{"right":
+            {"kind": "app",
+             "fn": "List",
+             "args": [{"kind": "app", "fn": "Nat", "args": []}]},
+            "left": {"kind": "app", "fn": "Unit", "args": []},
+            "kind": "implies"},
+           {"kind": "app", "fn": "Bool.true", "args": []},
+           {"kind": "app",
+            "fn": "Function.const",
+            "args":
+            [{"kind": "app", "fn": "Unit", "args": []},
+             {"kind": "app", "fn": "Lean.Name", "args": []},
+             {"kind": "app", "fn": "Unit.unit", "args": []},
+             {"kind": "app",
+              "fn": "Lean.Name.num",
+              "args":
+              [{"kind": "app",
+                "fn": "Lean.Name.str",
+                "args":
+                [{"kind": "app",
+                  "fn": "Lean.Name.str",
+                  "args":
+                  [{"kind": "app",
+                    "fn": "Lean.Name.num",
+                    "args":
+                    [{"kind": "app",
+                      "fn": "Lean.Name.str",
+                      "args":
+                      [{"kind": "app",
+                        "fn": "Lean.Name.str",
+                        "args":
+                        [{"kind": "app",
+                          "fn": "Lean.Name.num",
+                          "args":
+                          [{"kind": "app",
+                            "fn": "Lean.Name.num",
+                            "args":
+                            [{"kind": "app",
+                              "fn": "Lean.Name.num",
+                              "args":
+                              [{"kind": "app",
+                                "fn": "Lean.Name.num",
+                                "args":
+                                [{"kind": "app",
+                                  "fn": "Lean.Name.num",
+                                  "args":
+                                  [{"kind": "app",
+                                    "fn": "Lean.Name.num",
+                                    "args":
+                                    [{"kind": "app",
+                                      "fn": "Lean.Name.anonymous",
+                                      "args": []},
+                                     {"value": 13, "kind": "nat_lit"}]},
+                                   {"value": 39, "kind": "nat_lit"}]},
+                                 {"value": 13, "kind": "nat_lit"}]},
+                               {"value": 54, "kind": "nat_lit"}]},
+                             {"value": 39, "kind": "nat_lit"}]},
+                           {"value": 54, "kind": "nat_lit"}]},
+                         {"kind": "app", "fn": "\"_sorry\"", "args": []}]},
+                       {"kind": "app", "fn": "\"_@\"", "args": []}]},
+                     {"value": 3793697375, "kind": "nat_lit"}]},
+                   {"kind": "app", "fn": "\"_hygCtx\"", "args": []}]},
+                 {"kind": "app", "fn": "\"_hyg\"", "args": []}]},
+               {"value": 35, "kind": "nat_lit"}]}]}]}]},
+       "kind": "and"}},
+     "left": {"name": "_", "kind": "var"},
+     "kind": "implies"}}},
+  {"name": "sort_spec_v2",
+   "hypotheses": [],
+   "conclusion":
+   {"var": "_",
+    "sort": "_Sort",
+    "kind": "forall",
+    "body":
+    {"right":
+     {"var": "l",
+      "sort": "List_Nat",
+      "kind": "forall",
+      "body":
+      {"right":
+       {"kind": "app",
+        "fn": "Perm_v2",
+        "args":
+        [{"name": "l", "kind": "var"},
+         {"kind": "app",
+          "fn": "sorryAx",
+          "args":
+          [{"right":
+            {"kind": "app",
+             "fn": "List",
+             "args": [{"kind": "app", "fn": "Nat", "args": []}]},
+            "left": {"kind": "app", "fn": "Unit", "args": []},
+            "kind": "implies"},
+           {"kind": "app", "fn": "Bool.true", "args": []},
+           {"kind": "app",
+            "fn": "Function.const",
+            "args":
+            [{"kind": "app", "fn": "Unit", "args": []},
+             {"kind": "app", "fn": "Lean.Name", "args": []},
+             {"kind": "app", "fn": "Unit.unit", "args": []},
+             {"kind": "app",
+              "fn": "Lean.Name.num",
+              "args":
+              [{"kind": "app",
+                "fn": "Lean.Name.str",
+                "args":
+                [{"kind": "app",
+                  "fn": "Lean.Name.str",
+                  "args":
+                  [{"kind": "app",
+                    "fn": "Lean.Name.num",
+                    "args":
+                    [{"kind": "app",
+                      "fn": "Lean.Name.str",
+                      "args":
+                      [{"kind": "app",
+                        "fn": "Lean.Name.str",
+                        "args":
+                        [{"kind": "app",
+                          "fn": "Lean.Name.num",
+                          "args":
+                          [{"kind": "app",
+                            "fn": "Lean.Name.num",
+                            "args":
+                            [{"kind": "app",
+                              "fn": "Lean.Name.num",
+                              "args":
+                              [{"kind": "app",
+                                "fn": "Lean.Name.num",
+                                "args":
+                                [{"kind": "app",
+                                  "fn": "Lean.Name.num",
+                                  "args":
+                                  [{"kind": "app",
+                                    "fn": "Lean.Name.num",
+                                    "args":
+                                    [{"kind": "app",
+                                      "fn": "Lean.Name.anonymous",
+                                      "args": []},
+                                     {"value": 14, "kind": "nat_lit"}]},
+                                   {"value": 65, "kind": "nat_lit"}]},
+                                 {"value": 14, "kind": "nat_lit"}]},
+                               {"value": 76, "kind": "nat_lit"}]},
+                             {"value": 65, "kind": "nat_lit"}]},
+                           {"value": 76, "kind": "nat_lit"}]},
+                         {"kind": "app", "fn": "\"_sorry\"", "args": []}]},
+                       {"kind": "app", "fn": "\"_@\"", "args": []}]},
+                     {"value": 2066515185, "kind": "nat_lit"}]},
+                   {"kind": "app", "fn": "\"_hygCtx\"", "args": []}]},
+                 {"kind": "app", "fn": "\"_hyg\"", "args": []}]},
+               {"value": 38, "kind": "nat_lit"}]}]}]}]},
+       "left":
+       {"kind": "app",
+        "fn": "Sorted_v2",
+        "args":
+        [{"kind": "app",
+          "fn": "sorryAx",
+          "args":
+          [{"right":
+            {"kind": "app",
+             "fn": "List",
+             "args": [{"kind": "app", "fn": "Nat", "args": []}]},
+            "left": {"kind": "app", "fn": "Unit", "args": []},
+            "kind": "implies"},
+           {"kind": "app", "fn": "Bool.true", "args": []},
+           {"kind": "app",
+            "fn": "Function.const",
+            "args":
+            [{"kind": "app", "fn": "Unit", "args": []},
+             {"kind": "app", "fn": "Lean.Name", "args": []},
+             {"kind": "app", "fn": "Unit.unit", "args": []},
+             {"kind": "app",
+              "fn": "Lean.Name.num",
+              "args":
+              [{"kind": "app",
+                "fn": "Lean.Name.str",
+                "args":
+                [{"kind": "app",
+                  "fn": "Lean.Name.str",
+                  "args":
+                  [{"kind": "app",
+                    "fn": "Lean.Name.num",
+                    "args":
+                    [{"kind": "app",
+                      "fn": "Lean.Name.str",
+                      "args":
+                      [{"kind": "app",
+                        "fn": "Lean.Name.str",
+                        "args":
+                        [{"kind": "app",
+                          "fn": "Lean.Name.num",
+                          "args":
+                          [{"kind": "app",
+                            "fn": "Lean.Name.num",
+                            "args":
+                            [{"kind": "app",
+                              "fn": "Lean.Name.num",
+                              "args":
+                              [{"kind": "app",
+                                "fn": "Lean.Name.num",
+                                "args":
+                                [{"kind": "app",
+                                  "fn": "Lean.Name.num",
+                                  "args":
+                                  [{"kind": "app",
+                                    "fn": "Lean.Name.num",
+                                    "args":
+                                    [{"kind": "app",
+                                      "fn": "Lean.Name.anonymous",
+                                      "args": []},
+                                     {"value": 14, "kind": "nat_lit"}]},
+                                   {"value": 39, "kind": "nat_lit"}]},
+                                 {"value": 14, "kind": "nat_lit"}]},
+                               {"value": 50, "kind": "nat_lit"}]},
+                             {"value": 39, "kind": "nat_lit"}]},
+                           {"value": 50, "kind": "nat_lit"}]},
+                         {"kind": "app", "fn": "\"_sorry\"", "args": []}]},
+                       {"kind": "app", "fn": "\"_@\"", "args": []}]},
+                     {"value": 2066515185, "kind": "nat_lit"}]},
+                   {"kind": "app", "fn": "\"_hygCtx\"", "args": []}]},
+                 {"kind": "app", "fn": "\"_hyg\"", "args": []}]},
+               {"value": 35, "kind": "nat_lit"}]}]}]}]},
+       "kind": "and"}},
+     "left": {"name": "_", "kind": "var"},
+     "kind": "implies"}}},
+  {"name": "sort_spec_v3",
+   "hypotheses": [],
+   "conclusion":
+   {"var": "_",
+    "sort": "_Sort",
+    "kind": "forall",
+    "body":
+    {"right":
+     {"var": "l",
+      "sort": "List_Nat",
+      "kind": "forall",
+      "body":
+      {"right":
+       {"kind": "app",
+        "fn": "Perm_v1",
+        "args":
+        [{"name": "l", "kind": "var"},
+         {"kind": "app",
+          "fn": "sorryAx",
+          "args":
+          [{"right":
+            {"kind": "app",
+             "fn": "List",
+             "args": [{"kind": "app", "fn": "Nat", "args": []}]},
+            "left": {"kind": "app", "fn": "Unit", "args": []},
+            "kind": "implies"},
+           {"kind": "app", "fn": "Bool.true", "args": []},
+           {"kind": "app",
+            "fn": "Function.const",
+            "args":
+            [{"kind": "app", "fn": "Unit", "args": []},
+             {"kind": "app", "fn": "Lean.Name", "args": []},
+             {"kind": "app", "fn": "Unit.unit", "args": []},
+             {"kind": "app",
+              "fn": "Lean.Name.num",
+              "args":
+              [{"kind": "app",
+                "fn": "Lean.Name.str",
+                "args":
+                [{"kind": "app",
+                  "fn": "Lean.Name.str",
+                  "args":
+                  [{"kind": "app",
+                    "fn": "Lean.Name.num",
+                    "args":
+                    [{"kind": "app",
+                      "fn": "Lean.Name.str",
+                      "args":
+                      [{"kind": "app",
+                        "fn": "Lean.Name.str",
+                        "args":
+                        [{"kind": "app",
+                          "fn": "Lean.Name.num",
+                          "args":
+                          [{"kind": "app",
+                            "fn": "Lean.Name.num",
+                            "args":
+                            [{"kind": "app",
+                              "fn": "Lean.Name.num",
+                              "args":
+                              [{"kind": "app",
+                                "fn": "Lean.Name.num",
+                                "args":
+                                [{"kind": "app",
+                                  "fn": "Lean.Name.num",
+                                  "args":
+                                  [{"kind": "app",
+                                    "fn": "Lean.Name.num",
+                                    "args":
+                                    [{"kind": "app",
+                                      "fn": "Lean.Name.anonymous",
+                                      "args": []},
+                                     {"value": 15, "kind": "nat_lit"}]},
+                                   {"value": 64, "kind": "nat_lit"}]},
+                                 {"value": 15, "kind": "nat_lit"}]},
+                               {"value": 74, "kind": "nat_lit"}]},
+                             {"value": 64, "kind": "nat_lit"}]},
+                           {"value": 74, "kind": "nat_lit"}]},
+                         {"kind": "app", "fn": "\"_sorry\"", "args": []}]},
+                       {"kind": "app", "fn": "\"_@\"", "args": []}]},
+                     {"value": 2402214786, "kind": "nat_lit"}]},
+                   {"kind": "app", "fn": "\"_hygCtx\"", "args": []}]},
+                 {"kind": "app", "fn": "\"_hyg\"", "args": []}]},
+               {"value": 38, "kind": "nat_lit"}]}]}]}]},
+       "left":
+       {"kind": "app",
+        "fn": "Sorted_v1",
+        "args":
+        [{"kind": "app",
+          "fn": "sorryAx",
+          "args":
+          [{"right":
+            {"kind": "app",
+             "fn": "List",
+             "args": [{"kind": "app", "fn": "Nat", "args": []}]},
+            "left": {"kind": "app", "fn": "Unit", "args": []},
+            "kind": "implies"},
+           {"kind": "app", "fn": "Bool.true", "args": []},
+           {"kind": "app",
+            "fn": "Function.const",
+            "args":
+            [{"kind": "app", "fn": "Unit", "args": []},
+             {"kind": "app", "fn": "Lean.Name", "args": []},
+             {"kind": "app", "fn": "Unit.unit", "args": []},
+             {"kind": "app",
+              "fn": "Lean.Name.num",
+              "args":
+              [{"kind": "app",
+                "fn": "Lean.Name.str",
+                "args":
+                [{"kind": "app",
+                  "fn": "Lean.Name.str",
+                  "args":
+                  [{"kind": "app",
+                    "fn": "Lean.Name.num",
+                    "args":
+                    [{"kind": "app",
+                      "fn": "Lean.Name.str",
+                      "args":
+                      [{"kind": "app",
+                        "fn": "Lean.Name.str",
+                        "args":
+                        [{"kind": "app",
+                          "fn": "Lean.Name.num",
+                          "args":
+                          [{"kind": "app",
+                            "fn": "Lean.Name.num",
+                            "args":
+                            [{"kind": "app",
+                              "fn": "Lean.Name.num",
+                              "args":
+                              [{"kind": "app",
+                                "fn": "Lean.Name.num",
+                                "args":
+                                [{"kind": "app",
+                                  "fn": "Lean.Name.num",
+                                  "args":
+                                  [{"kind": "app",
+                                    "fn": "Lean.Name.num",
+                                    "args":
+                                    [{"kind": "app",
+                                      "fn": "Lean.Name.anonymous",
+                                      "args": []},
+                                     {"value": 15, "kind": "nat_lit"}]},
+                                   {"value": 39, "kind": "nat_lit"}]},
+                                 {"value": 15, "kind": "nat_lit"}]},
+                               {"value": 49, "kind": "nat_lit"}]},
+                             {"value": 39, "kind": "nat_lit"}]},
+                           {"value": 49, "kind": "nat_lit"}]},
+                         {"kind": "app", "fn": "\"_sorry\"", "args": []}]},
+                       {"kind": "app", "fn": "\"_@\"", "args": []}]},
+                     {"value": 2402214786, "kind": "nat_lit"}]},
+                   {"kind": "app", "fn": "\"_hygCtx\"", "args": []}]},
+                 {"kind": "app", "fn": "\"_hyg\"", "args": []}]},
+               {"value": 35, "kind": "nat_lit"}]}]}]}]},
+       "kind": "and"}},
+     "left": {"name": "_", "kind": "var"},
+     "kind": "implies"}}}],
+ "source_file": "specs/sorting/sort_lean.lean",
+ "sorts": [],
+ "predicates":
+ [{"params":
+   [{"sort": "List_Nat", "name": "a"}, {"sort": "List_Nat", "name": "b"}],
+   "name": "Perm_v2",
+   "equations":
+   [{"vars":
+     [{"sort": "List_Nat", "name": "a"}, {"sort": "List_Nat", "name": "b"}],
+     "rhs":
+     {"right":
+      {"var": "x",
+       "sort": "Nat",
+       "kind": "forall",
+       "body":
+       {"right":
+        {"kind": "mem",
+         "element": {"name": "b", "kind": "var"},
+         "collection": {"name": "x", "kind": "var"}},
+        "left":
+        {"kind": "mem",
+         "element": {"name": "a", "kind": "var"},
+         "collection": {"name": "x", "kind": "var"}},
+        "kind": "iff"}},
+      "left":
+      {"right":
+       {"kind": "app",
+        "fn": "List.length",
+        "args":
+        [{"kind": "app", "fn": "Nat", "args": []},
+         {"name": "b", "kind": "var"}]},
+       "left":
+       {"kind": "app",
+        "fn": "List.length",
+        "args":
+        [{"kind": "app", "fn": "Nat", "args": []},
+         {"name": "a", "kind": "var"}]},
+       "kind": "eq"},
+      "kind": "and"},
+     "lhs":
+     {"kind": "app",
+      "fn": "Perm_v2",
+      "args": [{"name": "a", "kind": "var"}, {"name": "b", "kind": "var"}]}}],
+   "body":
+   {"right":
+    {"var": "x",
+     "sort": "Nat",
+     "kind": "forall",
+     "body":
+     {"right":
+      {"kind": "mem",
+       "element": {"name": "b", "kind": "var"},
+       "collection": {"name": "x", "kind": "var"}},
+      "left":
+      {"kind": "mem",
+       "element": {"name": "a", "kind": "var"},
+       "collection": {"name": "x", "kind": "var"}},
+      "kind": "iff"}},
+    "left":
+    {"right":
+     {"kind": "app",
+      "fn": "List.length",
+      "args":
+      [{"kind": "app", "fn": "Nat", "args": []}, {"name": "b", "kind": "var"}]},
+     "left":
+     {"kind": "app",
+      "fn": "List.length",
+      "args":
+      [{"kind": "app", "fn": "Nat", "args": []}, {"name": "a", "kind": "var"}]},
+     "kind": "eq"},
+    "kind": "and"}},
+  {"params":
+   [{"sort": "List_Nat", "name": "a"}, {"sort": "List_Nat", "name": "b"}],
+   "name": "Perm_v1",
+   "equations":
+   [{"vars":
+     [{"sort": "List_Nat", "name": "a"}, {"sort": "List_Nat", "name": "b"}],
+     "rhs":
+     {"var": "x",
+      "sort": "Nat",
+      "kind": "forall",
+      "body":
+      {"right":
+       {"kind": "app",
+        "fn": "List.count",
+        "args":
+        [{"kind": "app", "fn": "Nat", "args": []},
+         {"kind": "app",
+          "fn": "instBEqOfDecidableEq",
+          "args":
+          [{"kind": "app", "fn": "Nat", "args": []},
+           {"kind": "app", "fn": "instDecidableEqNat", "args": []}]},
+         {"name": "x", "kind": "var"},
+         {"name": "b", "kind": "var"}]},
+       "left":
+       {"kind": "app",
+        "fn": "List.count",
+        "args":
+        [{"kind": "app", "fn": "Nat", "args": []},
+         {"kind": "app",
+          "fn": "instBEqOfDecidableEq",
+          "args":
+          [{"kind": "app", "fn": "Nat", "args": []},
+           {"kind": "app", "fn": "instDecidableEqNat", "args": []}]},
+         {"name": "x", "kind": "var"},
+         {"name": "a", "kind": "var"}]},
+       "kind": "eq"}},
+     "lhs":
+     {"kind": "app",
+      "fn": "Perm_v1",
+      "args": [{"name": "a", "kind": "var"}, {"name": "b", "kind": "var"}]}}],
+   "body":
+   {"var": "x",
+    "sort": "Nat",
+    "kind": "forall",
+    "body":
+    {"right":
+     {"kind": "app",
+      "fn": "List.count",
+      "args":
+      [{"kind": "app", "fn": "Nat", "args": []},
+       {"kind": "app",
+        "fn": "instBEqOfDecidableEq",
+        "args":
+        [{"kind": "app", "fn": "Nat", "args": []},
+         {"kind": "app", "fn": "instDecidableEqNat", "args": []}]},
+       {"name": "x", "kind": "var"},
+       {"name": "b", "kind": "var"}]},
+     "left":
+     {"kind": "app",
+      "fn": "List.count",
+      "args":
+      [{"kind": "app", "fn": "Nat", "args": []},
+       {"kind": "app",
+        "fn": "instBEqOfDecidableEq",
+        "args":
+        [{"kind": "app", "fn": "Nat", "args": []},
+         {"kind": "app", "fn": "instDecidableEqNat", "args": []}]},
+       {"name": "x", "kind": "var"},
+       {"name": "a", "kind": "var"}]},
+     "kind": "eq"}}},
+  {"params": [{"sort": "List_Nat", "name": "l"}],
+   "name": "Sorted_v1",
+   "equations":
+   [{"vars": [],
+     "rhs":
+     {"kind": "app",
+      "fn": "sorryAx",
+      "args":
+      [{"right":
+        {"right":
+         {"kind": "unsupported",
+          "description": "Sort-level expression in IR position"},
+         "left":
+         {"kind": "app",
+          "fn": "List",
+          "args": [{"kind": "app", "fn": "Nat", "args": []}]},
+         "kind": "implies"},
+        "left": {"kind": "app", "fn": "Lean.Name", "args": []},
+        "kind": "implies"},
+       {"kind": "app", "fn": "Bool.true", "args": []},
+       {"kind": "app",
+        "fn": "Lean.Name.num",
+        "args":
+        [{"kind": "app",
+          "fn": "Lean.Name.str",
+          "args":
+          [{"kind": "app",
+            "fn": "Lean.Name.str",
+            "args":
+            [{"kind": "app",
+              "fn": "Lean.Name.num",
+              "args":
+              [{"kind": "app",
+                "fn": "Lean.Name.str",
+                "args":
+                [{"kind": "app",
+                  "fn": "Lean.Name.str",
+                  "args":
+                  [{"kind": "app",
+                    "fn": "Lean.Name.num",
+                    "args":
+                    [{"kind": "app",
+                      "fn": "Lean.Name.num",
+                      "args":
+                      [{"kind": "app",
+                        "fn": "Lean.Name.num",
+                        "args":
+                        [{"kind": "app",
+                          "fn": "Lean.Name.num",
+                          "args":
+                          [{"kind": "app",
+                            "fn": "Lean.Name.num",
+                            "args":
+                            [{"kind": "app",
+                              "fn": "Lean.Name.num",
+                              "args":
+                              [{"kind": "app",
+                                "fn": "Lean.Name.anonymous",
+                                "args": []},
+                               {"value": 8, "kind": "nat_lit"}]},
+                             {"value": 4, "kind": "nat_lit"}]},
+                           {"value": 8, "kind": "nat_lit"}]},
+                         {"value": 13, "kind": "nat_lit"}]},
+                       {"value": 4, "kind": "nat_lit"}]},
+                     {"value": 13, "kind": "nat_lit"}]},
+                   {"kind": "app", "fn": "\"_sorry\"", "args": []}]},
+                 {"kind": "app", "fn": "\"_@\"", "args": []}]},
+               {"value": 1483668264, "kind": "nat_lit"}]},
+             {"kind": "app", "fn": "\"_hygCtx\"", "args": []}]},
+           {"kind": "app", "fn": "\"_hyg\"", "args": []}]},
+         {"value": 620, "kind": "nat_lit"}]}]},
+     "lhs": {"kind": "app", "fn": "Sorted_v1", "args": []}}],
+   "body":
+   {"kind": "app",
+    "fn": "sorryAx",
+    "args":
+    [{"right":
+      {"right":
+       {"kind": "unsupported",
+        "description": "Sort-level expression in IR position"},
+       "left":
+       {"kind": "app",
+        "fn": "List",
+        "args": [{"kind": "app", "fn": "Nat", "args": []}]},
+       "kind": "implies"},
+      "left": {"kind": "app", "fn": "Lean.Name", "args": []},
+      "kind": "implies"},
+     {"kind": "app", "fn": "Bool.true", "args": []},
+     {"kind": "app",
+      "fn": "Lean.Name.num",
+      "args":
+      [{"kind": "app",
+        "fn": "Lean.Name.str",
+        "args":
+        [{"kind": "app",
+          "fn": "Lean.Name.str",
+          "args":
+          [{"kind": "app",
+            "fn": "Lean.Name.num",
+            "args":
+            [{"kind": "app",
+              "fn": "Lean.Name.str",
+              "args":
+              [{"kind": "app",
+                "fn": "Lean.Name.str",
+                "args":
+                [{"kind": "app",
+                  "fn": "Lean.Name.num",
+                  "args":
+                  [{"kind": "app",
+                    "fn": "Lean.Name.num",
+                    "args":
+                    [{"kind": "app",
+                      "fn": "Lean.Name.num",
+                      "args":
+                      [{"kind": "app",
+                        "fn": "Lean.Name.num",
+                        "args":
+                        [{"kind": "app",
+                          "fn": "Lean.Name.num",
+                          "args":
+                          [{"kind": "app",
+                            "fn": "Lean.Name.num",
+                            "args":
+                            [{"kind": "app",
+                              "fn": "Lean.Name.anonymous",
+                              "args": []},
+                             {"value": 8, "kind": "nat_lit"}]},
+                           {"value": 4, "kind": "nat_lit"}]},
+                         {"value": 8, "kind": "nat_lit"}]},
+                       {"value": 13, "kind": "nat_lit"}]},
+                     {"value": 4, "kind": "nat_lit"}]},
+                   {"value": 13, "kind": "nat_lit"}]},
+                 {"kind": "app", "fn": "\"_sorry\"", "args": []}]},
+               {"kind": "app", "fn": "\"_@\"", "args": []}]},
+             {"value": 1483668264, "kind": "nat_lit"}]},
+           {"kind": "app", "fn": "\"_hygCtx\"", "args": []}]},
+         {"kind": "app", "fn": "\"_hyg\"", "args": []}]},
+       {"value": 620, "kind": "nat_lit"}]}]}},
+  {"params": [{"sort": "List_Nat", "name": "l"}],
+   "name": "Sorted_v2",
+   "equations":
+   [{"vars": [{"sort": "List_Nat", "name": "l"}],
+     "rhs":
+     {"var": "i",
+      "sort": "Nat",
+      "kind": "forall",
+      "body":
+      {"right":
+       {"right":
+        {"kind": "app",
+         "fn": "GetElem.getElem",
+         "args":
+         [{"kind": "app",
+           "fn": "List",
+           "args": [{"kind": "app", "fn": "Nat", "args": []}]},
+          {"kind": "app", "fn": "Nat", "args": []},
+          {"kind": "app", "fn": "Nat", "args": []},
+          {"kind": "unsupported",
+           "description": "unexpected lambda in proposition"},
+          {"kind": "app",
+           "fn": "List.instGetElemNatLtLength",
+           "args": [{"kind": "app", "fn": "Nat", "args": []}]},
+          {"name": "l", "kind": "var"},
+          {"kind": "app",
+           "fn": "add",
+           "args":
+           [{"name": "i", "kind": "var"}, {"value": 1, "kind": "nat_lit"}]},
+          {"kind": "app",
+           "fn": "sorryAx",
+           "args":
+           [{"right":
+             {"right":
+              {"kind": "app",
+               "fn": "List.length",
+               "args":
+               [{"kind": "app", "fn": "Nat", "args": []},
+                {"name": "l", "kind": "var"}]},
+              "left":
+              {"kind": "app",
+               "fn": "add",
+               "args":
+               [{"name": "i", "kind": "var"}, {"value": 1, "kind": "nat_lit"}]},
+              "kind": "lt"},
+             "left": {"kind": "app", "fn": "Lean.Name", "args": []},
+             "kind": "implies"},
+            {"kind": "app", "fn": "Bool.true", "args": []},
+            {"kind": "app",
+             "fn": "Lean.Name.num",
+             "args":
+             [{"kind": "app",
+               "fn": "Lean.Name.str",
+               "args":
+               [{"kind": "app",
+                 "fn": "Lean.Name.str",
+                 "args":
+                 [{"kind": "app",
+                   "fn": "Lean.Name.num",
+                   "args":
+                   [{"kind": "app",
+                     "fn": "Lean.Name.str",
+                     "args":
+                     [{"kind": "app",
+                       "fn": "Lean.Name.str",
+                       "args":
+                       [{"kind": "app",
+                         "fn": "Lean.Name.num",
+                         "args":
+                         [{"kind": "app",
+                           "fn": "Lean.Name.num",
+                           "args":
+                           [{"kind": "app",
+                             "fn": "Lean.Name.num",
+                             "args":
+                             [{"kind": "app",
+                               "fn": "Lean.Name.num",
+                               "args":
+                               [{"kind": "app",
+                                 "fn": "Lean.Name.num",
+                                 "args":
+                                 [{"kind": "app",
+                                   "fn": "Lean.Name.num",
+                                   "args":
+                                   [{"kind": "app",
+                                     "fn": "Lean.Name.anonymous",
+                                     "args": []},
+                                    {"value": 9, "kind": "nat_lit"}]},
+                                  {"value": 70, "kind": "nat_lit"}]},
+                                {"value": 9, "kind": "nat_lit"}]},
+                              {"value": 76, "kind": "nat_lit"}]},
+                            {"value": 70, "kind": "nat_lit"}]},
+                          {"value": 76, "kind": "nat_lit"}]},
+                        {"kind": "app", "fn": "\"_sorry\"", "args": []}]},
+                      {"kind": "app", "fn": "\"_@\"", "args": []}]},
+                    {"value": 3083723734, "kind": "nat_lit"}]},
+                  {"kind": "app", "fn": "\"_hygCtx\"", "args": []}]},
+                {"kind": "app", "fn": "\"_hyg\"", "args": []}]},
+              {"value": 610, "kind": "nat_lit"}]}]}]},
+        "left":
+        {"kind": "app",
+         "fn": "GetElem.getElem",
+         "args":
+         [{"kind": "app",
+           "fn": "List",
+           "args": [{"kind": "app", "fn": "Nat", "args": []}]},
+          {"kind": "app", "fn": "Nat", "args": []},
+          {"kind": "app", "fn": "Nat", "args": []},
+          {"kind": "unsupported",
+           "description": "unexpected lambda in proposition"},
+          {"kind": "app",
+           "fn": "List.instGetElemNatLtLength",
+           "args": [{"kind": "app", "fn": "Nat", "args": []}]},
+          {"name": "l", "kind": "var"},
+          {"name": "i", "kind": "var"},
+          {"kind": "app",
+           "fn": "sorryAx",
+           "args":
+           [{"right":
+             {"right":
+              {"kind": "app",
+               "fn": "List.length",
+               "args":
+               [{"kind": "app", "fn": "Nat", "args": []},
+                {"name": "l", "kind": "var"}]},
+              "left": {"name": "i", "kind": "var"},
+              "kind": "lt"},
+             "left": {"kind": "app", "fn": "Lean.Name", "args": []},
+             "kind": "implies"},
+            {"kind": "app", "fn": "Bool.true", "args": []},
+            {"kind": "app",
+             "fn": "Lean.Name.num",
+             "args":
+             [{"kind": "app",
+               "fn": "Lean.Name.str",
+               "args":
+               [{"kind": "app",
+                 "fn": "Lean.Name.str",
+                 "args":
+                 [{"kind": "app",
+                   "fn": "Lean.Name.num",
+                   "args":
+                   [{"kind": "app",
+                     "fn": "Lean.Name.str",
+                     "args":
+                     [{"kind": "app",
+                       "fn": "Lean.Name.str",
+                       "args":
+                       [{"kind": "app",
+                         "fn": "Lean.Name.num",
+                         "args":
+                         [{"kind": "app",
+                           "fn": "Lean.Name.num",
+                           "args":
+                           [{"kind": "app",
+                             "fn": "Lean.Name.num",
+                             "args":
+                             [{"kind": "app",
+                               "fn": "Lean.Name.num",
+                               "args":
+                               [{"kind": "app",
+                                 "fn": "Lean.Name.num",
+                                 "args":
+                                 [{"kind": "app",
+                                   "fn": "Lean.Name.num",
+                                   "args":
+                                   [{"kind": "app",
+                                     "fn": "Lean.Name.anonymous",
+                                     "args": []},
+                                    {"value": 9, "kind": "nat_lit"}]},
+                                  {"value": 63, "kind": "nat_lit"}]},
+                                {"value": 9, "kind": "nat_lit"}]},
+                              {"value": 67, "kind": "nat_lit"}]},
+                            {"value": 63, "kind": "nat_lit"}]},
+                          {"value": 67, "kind": "nat_lit"}]},
+                        {"kind": "app", "fn": "\"_sorry\"", "args": []}]},
+                      {"kind": "app", "fn": "\"_@\"", "args": []}]},
+                    {"value": 3083723734, "kind": "nat_lit"}]},
+                  {"kind": "app", "fn": "\"_hygCtx\"", "args": []}]},
+                {"kind": "app", "fn": "\"_hyg\"", "args": []}]},
+              {"value": 323, "kind": "nat_lit"}]}]}]},
+        "kind": "leq"},
+       "left":
+       {"right":
+        {"kind": "app",
+         "fn": "List.length",
+         "args":
+         [{"kind": "app", "fn": "Nat", "args": []},
+          {"name": "l", "kind": "var"}]},
+        "left":
+        {"kind": "app",
+         "fn": "add",
+         "args":
+         [{"name": "i", "kind": "var"}, {"value": 1, "kind": "nat_lit"}]},
+        "kind": "lt"},
+       "kind": "implies"}},
+     "lhs":
+     {"kind": "app",
+      "fn": "Sorted_v2",
+      "args": [{"name": "l", "kind": "var"}]}}],
+   "body":
+   {"var": "i",
+    "sort": "Nat",
+    "kind": "forall",
+    "body":
+    {"right":
+     {"right":
+      {"kind": "app",
+       "fn": "GetElem.getElem",
+       "args":
+       [{"kind": "app",
+         "fn": "List",
+         "args": [{"kind": "app", "fn": "Nat", "args": []}]},
+        {"kind": "app", "fn": "Nat", "args": []},
+        {"kind": "app", "fn": "Nat", "args": []},
+        {"kind": "unsupported",
+         "description": "unexpected lambda in proposition"},
+        {"kind": "app",
+         "fn": "List.instGetElemNatLtLength",
+         "args": [{"kind": "app", "fn": "Nat", "args": []}]},
+        {"name": "l", "kind": "var"},
+        {"kind": "app",
+         "fn": "add",
+         "args":
+         [{"name": "i", "kind": "var"}, {"value": 1, "kind": "nat_lit"}]},
+        {"kind": "app",
+         "fn": "sorryAx",
+         "args":
+         [{"right":
+           {"right":
+            {"kind": "app",
+             "fn": "List.length",
+             "args":
+             [{"kind": "app", "fn": "Nat", "args": []},
+              {"name": "l", "kind": "var"}]},
+            "left":
+            {"kind": "app",
+             "fn": "add",
+             "args":
+             [{"name": "i", "kind": "var"}, {"value": 1, "kind": "nat_lit"}]},
+            "kind": "lt"},
+           "left": {"kind": "app", "fn": "Lean.Name", "args": []},
+           "kind": "implies"},
+          {"kind": "app", "fn": "Bool.true", "args": []},
+          {"kind": "app",
+           "fn": "Lean.Name.num",
+           "args":
+           [{"kind": "app",
+             "fn": "Lean.Name.str",
+             "args":
+             [{"kind": "app",
+               "fn": "Lean.Name.str",
+               "args":
+               [{"kind": "app",
+                 "fn": "Lean.Name.num",
+                 "args":
+                 [{"kind": "app",
+                   "fn": "Lean.Name.str",
+                   "args":
+                   [{"kind": "app",
+                     "fn": "Lean.Name.str",
+                     "args":
+                     [{"kind": "app",
+                       "fn": "Lean.Name.num",
+                       "args":
+                       [{"kind": "app",
+                         "fn": "Lean.Name.num",
+                         "args":
+                         [{"kind": "app",
+                           "fn": "Lean.Name.num",
+                           "args":
+                           [{"kind": "app",
+                             "fn": "Lean.Name.num",
+                             "args":
+                             [{"kind": "app",
+                               "fn": "Lean.Name.num",
+                               "args":
+                               [{"kind": "app",
+                                 "fn": "Lean.Name.num",
+                                 "args":
+                                 [{"kind": "app",
+                                   "fn": "Lean.Name.anonymous",
+                                   "args": []},
+                                  {"value": 9, "kind": "nat_lit"}]},
+                                {"value": 70, "kind": "nat_lit"}]},
+                              {"value": 9, "kind": "nat_lit"}]},
+                            {"value": 76, "kind": "nat_lit"}]},
+                          {"value": 70, "kind": "nat_lit"}]},
+                        {"value": 76, "kind": "nat_lit"}]},
+                      {"kind": "app", "fn": "\"_sorry\"", "args": []}]},
+                    {"kind": "app", "fn": "\"_@\"", "args": []}]},
+                  {"value": 3083723734, "kind": "nat_lit"}]},
+                {"kind": "app", "fn": "\"_hygCtx\"", "args": []}]},
+              {"kind": "app", "fn": "\"_hyg\"", "args": []}]},
+            {"value": 610, "kind": "nat_lit"}]}]}]},
+      "left":
+      {"kind": "app",
+       "fn": "GetElem.getElem",
+       "args":
+       [{"kind": "app",
+         "fn": "List",
+         "args": [{"kind": "app", "fn": "Nat", "args": []}]},
+        {"kind": "app", "fn": "Nat", "args": []},
+        {"kind": "app", "fn": "Nat", "args": []},
+        {"kind": "unsupported",
+         "description": "unexpected lambda in proposition"},
+        {"kind": "app",
+         "fn": "List.instGetElemNatLtLength",
+         "args": [{"kind": "app", "fn": "Nat", "args": []}]},
+        {"name": "l", "kind": "var"},
+        {"name": "i", "kind": "var"},
+        {"kind": "app",
+         "fn": "sorryAx",
+         "args":
+         [{"right":
+           {"right":
+            {"kind": "app",
+             "fn": "List.length",
+             "args":
+             [{"kind": "app", "fn": "Nat", "args": []},
+              {"name": "l", "kind": "var"}]},
+            "left": {"name": "i", "kind": "var"},
+            "kind": "lt"},
+           "left": {"kind": "app", "fn": "Lean.Name", "args": []},
+           "kind": "implies"},
+          {"kind": "app", "fn": "Bool.true", "args": []},
+          {"kind": "app",
+           "fn": "Lean.Name.num",
+           "args":
+           [{"kind": "app",
+             "fn": "Lean.Name.str",
+             "args":
+             [{"kind": "app",
+               "fn": "Lean.Name.str",
+               "args":
+               [{"kind": "app",
+                 "fn": "Lean.Name.num",
+                 "args":
+                 [{"kind": "app",
+                   "fn": "Lean.Name.str",
+                   "args":
+                   [{"kind": "app",
+                     "fn": "Lean.Name.str",
+                     "args":
+                     [{"kind": "app",
+                       "fn": "Lean.Name.num",
+                       "args":
+                       [{"kind": "app",
+                         "fn": "Lean.Name.num",
+                         "args":
+                         [{"kind": "app",
+                           "fn": "Lean.Name.num",
+                           "args":
+                           [{"kind": "app",
+                             "fn": "Lean.Name.num",
+                             "args":
+                             [{"kind": "app",
+                               "fn": "Lean.Name.num",
+                               "args":
+                               [{"kind": "app",
+                                 "fn": "Lean.Name.num",
+                                 "args":
+                                 [{"kind": "app",
+                                   "fn": "Lean.Name.anonymous",
+                                   "args": []},
+                                  {"value": 9, "kind": "nat_lit"}]},
+                                {"value": 63, "kind": "nat_lit"}]},
+                              {"value": 9, "kind": "nat_lit"}]},
+                            {"value": 67, "kind": "nat_lit"}]},
+                          {"value": 63, "kind": "nat_lit"}]},
+                        {"value": 67, "kind": "nat_lit"}]},
+                      {"kind": "app", "fn": "\"_sorry\"", "args": []}]},
+                    {"kind": "app", "fn": "\"_@\"", "args": []}]},
+                  {"value": 3083723734, "kind": "nat_lit"}]},
+                {"kind": "app", "fn": "\"_hygCtx\"", "args": []}]},
+              {"kind": "app", "fn": "\"_hyg\"", "args": []}]},
+            {"value": 323, "kind": "nat_lit"}]}]}]},
+      "kind": "leq"},
+     "left":
+     {"right":
+      {"kind": "app",
+       "fn": "List.length",
+       "args":
+       [{"kind": "app", "fn": "Nat", "args": []},
+        {"name": "l", "kind": "var"}]},
+      "left":
+      {"kind": "app",
+       "fn": "add",
+       "args": [{"name": "i", "kind": "var"}, {"value": 1, "kind": "nat_lit"}]},
+      "kind": "lt"},
+     "kind": "implies"}}}],
+ "functions": [],
+ "constructors": []}

@@ -1,0 +1,178 @@
+{"warnings": [],
+ "version": 1,
+ "theorems":
+ [{"name": "nil_all_positive",
+   "hypotheses": [],
+   "conclusion":
+   {"kind": "app",
+    "fn": "AllPositive",
+    "args":
+    [{"kind": "app",
+      "fn": "List.nil",
+      "args": [{"kind": "app", "fn": "Nat", "args": []}]}]}},
+  {"name": "sorted_implies_head_le",
+   "hypotheses": [],
+   "conclusion":
+   {"var": "x",
+    "sort": "Nat",
+    "kind": "forall",
+    "body":
+    {"var": "y",
+     "sort": "Nat",
+     "kind": "forall",
+     "body":
+     {"var": "rest",
+      "sort": "List_Nat",
+      "kind": "forall",
+      "body":
+      {"right":
+       {"right": {"name": "y", "kind": "var"},
+        "left": {"name": "x", "kind": "var"},
+        "kind": "leq"},
+       "left":
+       {"kind": "app",
+        "fn": "SortedAsc",
+        "args":
+        [{"kind": "app",
+          "fn": "List.cons",
+          "args":
+          [{"kind": "app", "fn": "Nat", "args": []},
+           {"name": "x", "kind": "var"},
+           {"kind": "app",
+            "fn": "List.cons",
+            "args":
+            [{"kind": "app", "fn": "Nat", "args": []},
+             {"name": "y", "kind": "var"},
+             {"name": "rest", "kind": "var"}]}]}]},
+       "kind": "implies"}}}}},
+  {"name": "nil_sorted",
+   "hypotheses": [],
+   "conclusion":
+   {"kind": "app",
+    "fn": "SortedAsc",
+    "args":
+    [{"kind": "app",
+      "fn": "List.nil",
+      "args": [{"kind": "app", "fn": "Nat", "args": []}]}]}}],
+ "source_file": "crates/specmut-lean/lean/test_fixtures/recursive_list.lean",
+ "sorts": [],
+ "predicates":
+ [{"params": [{"sort": "List_Nat", "name": "_"}],
+   "name": "AllPositive",
+   "equations":
+   [{"vars": [],
+     "rhs": {"kind": "true"},
+     "lhs":
+     {"kind": "app",
+      "fn": "AllPositive",
+      "args":
+      [{"kind": "app",
+        "fn": "List.nil",
+        "args": [{"kind": "app", "fn": "Nat", "args": []}]}]}},
+    {"vars":
+     [{"sort": "Nat", "name": "x_1"}, {"sort": "List_Nat", "name": "xs"}],
+     "rhs":
+     {"right":
+      {"kind": "app",
+       "fn": "AllPositive",
+       "args": [{"name": "xs", "kind": "var"}]},
+      "left":
+      {"kind": "app",
+       "fn": "GT.gt",
+       "args":
+       [{"kind": "app", "fn": "Nat", "args": []},
+        {"kind": "app", "fn": "instLTNat", "args": []},
+        {"name": "x_1", "kind": "var"},
+        {"value": 0, "kind": "nat_lit"}]},
+      "kind": "and"},
+     "lhs":
+     {"kind": "app",
+      "fn": "AllPositive",
+      "args":
+      [{"kind": "app",
+        "fn": "List.cons",
+        "args":
+        [{"kind": "app", "fn": "Nat", "args": []},
+         {"name": "x_1", "kind": "var"},
+         {"name": "xs", "kind": "var"}]}]}}],
+   "body":
+   {"kind": "app",
+    "fn": "List.brecOn",
+    "args":
+    [{"kind": "app", "fn": "Nat", "args": []},
+     {"kind": "unsupported", "description": "unexpected lambda in proposition"},
+     {"name": "_", "kind": "var"},
+     {"kind": "unsupported",
+      "description": "unexpected lambda in proposition"}]}},
+  {"params": [{"sort": "List_Nat", "name": "_"}],
+   "name": "SortedAsc",
+   "equations":
+   [{"vars": [],
+     "rhs": {"kind": "true"},
+     "lhs":
+     {"kind": "app",
+      "fn": "SortedAsc",
+      "args":
+      [{"kind": "app",
+        "fn": "List.nil",
+        "args": [{"kind": "app", "fn": "Nat", "args": []}]}]}},
+    {"vars": [{"sort": "Nat", "name": "head"}],
+     "rhs": {"kind": "true"},
+     "lhs":
+     {"kind": "app",
+      "fn": "SortedAsc",
+      "args":
+      [{"kind": "app",
+        "fn": "List.cons",
+        "args":
+        [{"kind": "app", "fn": "Nat", "args": []},
+         {"name": "head", "kind": "var"},
+         {"kind": "app",
+          "fn": "List.nil",
+          "args": [{"kind": "app", "fn": "Nat", "args": []}]}]}]}},
+    {"vars":
+     [{"sort": "Nat", "name": "x_1"},
+      {"sort": "Nat", "name": "y"},
+      {"sort": "List_Nat", "name": "rest"}],
+     "rhs":
+     {"right":
+      {"kind": "app",
+       "fn": "SortedAsc",
+       "args":
+       [{"kind": "app",
+         "fn": "List.cons",
+         "args":
+         [{"kind": "app", "fn": "Nat", "args": []},
+          {"name": "y", "kind": "var"},
+          {"name": "rest", "kind": "var"}]}]},
+      "left":
+      {"right": {"name": "y", "kind": "var"},
+       "left": {"name": "x_1", "kind": "var"},
+       "kind": "leq"},
+      "kind": "and"},
+     "lhs":
+     {"kind": "app",
+      "fn": "SortedAsc",
+      "args":
+      [{"kind": "app",
+        "fn": "List.cons",
+        "args":
+        [{"kind": "app", "fn": "Nat", "args": []},
+         {"name": "x_1", "kind": "var"},
+         {"kind": "app",
+          "fn": "List.cons",
+          "args":
+          [{"kind": "app", "fn": "Nat", "args": []},
+           {"name": "y", "kind": "var"},
+           {"name": "rest", "kind": "var"}]}]}]}}],
+   "body":
+   {"kind": "app",
+    "fn": "List.brecOn",
+    "args":
+    [{"kind": "app", "fn": "Nat", "args": []},
+     {"kind": "unsupported", "description": "unexpected lambda in proposition"},
+     {"name": "_", "kind": "var"},
+     {"kind": "unsupported",
+      "description": "unexpected lambda in proposition"}]}}],
+ "functions": [],
+ "constructors": []}

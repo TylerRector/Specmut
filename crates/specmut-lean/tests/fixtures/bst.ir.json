@@ -1,0 +1,182 @@
+{"warnings": [],
+ "version": 1,
+ "theorems":
+ [{"name": "sorted_singleton",
+   "hypotheses": [],
+   "conclusion":
+   {"var": "n",
+    "sort": "Nat",
+    "kind": "forall",
+    "body":
+    {"kind": "app",
+     "fn": "Sorted",
+     "args":
+     [{"kind": "app",
+       "fn": "List.cons",
+       "args":
+       [{"kind": "app", "fn": "Nat", "args": []},
+        {"name": "n", "kind": "var"},
+        {"kind": "app",
+         "fn": "List.nil",
+         "args": [{"kind": "app", "fn": "Nat", "args": []}]}]}]}}},
+  {"name": "leaf_contains_none",
+   "hypotheses": [],
+   "conclusion":
+   {"var": "x",
+    "sort": "Nat",
+    "kind": "forall",
+    "body":
+    {"kind": "not",
+     "body":
+     {"right": {"kind": "app", "fn": "Bool.true", "args": []},
+      "left":
+      {"kind": "app",
+       "fn": "Tree.contains",
+       "args":
+       [{"kind": "app", "fn": "Tree.leaf", "args": []},
+        {"name": "x", "kind": "var"}]},
+      "kind": "eq"}}}},
+  {"name": "sorted_nil",
+   "hypotheses": [],
+   "conclusion":
+   {"kind": "app",
+    "fn": "Sorted",
+    "args":
+    [{"kind": "app",
+      "fn": "List.nil",
+      "args": [{"kind": "app", "fn": "Nat", "args": []}]}]}}],
+ "source_file": "crates/specmut-lean/lean/test_fixtures/bst.lean",
+ "sorts":
+ [{"num_params": 0, "num_ctors": 2, "name": "Tree", "kind": "inductive"}],
+ "predicates":
+ [{"params": [{"sort": "List_Nat", "name": "_"}],
+   "name": "Sorted",
+   "equations":
+   [{"vars": [],
+     "rhs": {"kind": "true"},
+     "lhs":
+     {"kind": "app",
+      "fn": "Sorted",
+      "args":
+      [{"kind": "app",
+        "fn": "List.nil",
+        "args": [{"kind": "app", "fn": "Nat", "args": []}]}]}},
+    {"vars": [{"sort": "Nat", "name": "head"}],
+     "rhs": {"kind": "true"},
+     "lhs":
+     {"kind": "app",
+      "fn": "Sorted",
+      "args":
+      [{"kind": "app",
+        "fn": "List.cons",
+        "args":
+        [{"kind": "app", "fn": "Nat", "args": []},
+         {"name": "head", "kind": "var"},
+         {"kind": "app",
+          "fn": "List.nil",
+          "args": [{"kind": "app", "fn": "Nat", "args": []}]}]}]}},
+    {"vars":
+     [{"sort": "Nat", "name": "a"},
+      {"sort": "Nat", "name": "b"},
+      {"sort": "List_Nat", "name": "rs"}],
+     "rhs":
+     {"right":
+      {"kind": "app",
+       "fn": "Sorted",
+       "args":
+       [{"kind": "app",
+         "fn": "List.cons",
+         "args":
+         [{"kind": "app", "fn": "Nat", "args": []},
+          {"name": "b", "kind": "var"},
+          {"name": "rs", "kind": "var"}]}]},
+      "left":
+      {"right": {"name": "b", "kind": "var"},
+       "left": {"name": "a", "kind": "var"},
+       "kind": "leq"},
+      "kind": "and"},
+     "lhs":
+     {"kind": "app",
+      "fn": "Sorted",
+      "args":
+      [{"kind": "app",
+        "fn": "List.cons",
+        "args":
+        [{"kind": "app", "fn": "Nat", "args": []},
+         {"name": "a", "kind": "var"},
+         {"kind": "app",
+          "fn": "List.cons",
+          "args":
+          [{"kind": "app", "fn": "Nat", "args": []},
+           {"name": "b", "kind": "var"},
+           {"name": "rs", "kind": "var"}]}]}]}}],
+   "body":
+   {"kind": "app",
+    "fn": "List.brecOn",
+    "args":
+    [{"kind": "app", "fn": "Nat", "args": []},
+     {"kind": "unsupported", "description": "unexpected lambda in proposition"},
+     {"name": "_", "kind": "var"},
+     {"kind": "unsupported",
+      "description": "unexpected lambda in proposition"}]}}],
+ "functions":
+ [{"name": "Tree.contains",
+   "equations":
+   [{"vars": [{"sort": "Nat", "name": "_"}],
+     "rhs": {"kind": "app", "fn": "Bool.false", "args": []},
+     "lhs":
+     {"kind": "app",
+      "fn": "Tree.contains",
+      "args":
+      [{"kind": "app", "fn": "Tree.leaf", "args": []},
+       {"name": "_", "kind": "var"}]}},
+    {"vars":
+     [{"sort": "Nat", "name": "_"},
+      {"sort": "Tree", "name": "l"},
+      {"sort": "Nat", "name": "v"},
+      {"sort": "Tree", "name": "r"}],
+     "rhs":
+     {"kind": "app",
+      "fn": "ite",
+      "args":
+      [{"kind": "app", "fn": "Bool", "args": []},
+       {"right": {"name": "v", "kind": "var"},
+        "left": {"name": "_", "kind": "var"},
+        "kind": "eq"},
+       {"kind": "app",
+        "fn": "instDecidableEqNat",
+        "args": [{"name": "_", "kind": "var"}, {"name": "v", "kind": "var"}]},
+       {"kind": "app", "fn": "Bool.true", "args": []},
+       {"kind": "app",
+        "fn": "ite",
+        "args":
+        [{"kind": "app", "fn": "Bool", "args": []},
+         {"right": {"name": "v", "kind": "var"},
+          "left": {"name": "_", "kind": "var"},
+          "kind": "lt"},
+         {"kind": "app",
+          "fn": "Nat.decLt",
+          "args": [{"name": "_", "kind": "var"}, {"name": "v", "kind": "var"}]},
+         {"kind": "app",
+          "fn": "Tree.contains",
+          "args": [{"name": "l", "kind": "var"}, {"name": "_", "kind": "var"}]},
+         {"kind": "app",
+          "fn": "Tree.contains",
+          "args":
+          [{"name": "r", "kind": "var"}, {"name": "_", "kind": "var"}]}]}]},
+     "lhs":
+     {"kind": "app",
+      "fn": "Tree.contains",
+      "args":
+      [{"kind": "app",
+        "fn": "Tree.node",
+        "args":
+        [{"name": "l", "kind": "var"},
+         {"name": "v", "kind": "var"},
+         {"name": "r", "kind": "var"}]},
+       {"name": "_", "kind": "var"}]}}],
+   "domain": ["Tree", "Nat"],
+   "codomain": "Bool"}],
+ "constructors":
+ [{"sort": "Tree", "name": "Tree.leaf", "fields": []},
+  {"sort": "Tree", "name": "Tree.node", "fields": ["Tree", "Nat", "Tree"]}]}

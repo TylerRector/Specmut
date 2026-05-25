@@ -1,0 +1,19 @@
+[package]
+name = "specmut-core"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+description = "Core algebraic types for the specmut framework: signatures, formulas, and finite models."
+
+[dependencies]
+num-bigint = { workspace = true }
+thiserror = { workspace = true }
+rand = { workspace = true }
+rand_chacha = { workspace = true }
+# Phase F: optional Serialize derives on `MutantWitness` / `WitnessDirection`
+# so the cli's JSON renderer can emit them without intermediate plumbing.
+serde = { workspace = true }
+
+[lints]
+workspace = true
