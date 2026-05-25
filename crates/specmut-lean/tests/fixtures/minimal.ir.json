@@ -1,0 +1,60 @@
+{"warnings":
+ ["elaboration error: crates/specmut-lean/lean/test_fixtures/minimal.lean:8:33: error: failed to synthesize\n  Decidable (Pos 1)\n\nHint: Additional diagnostic information may be available using the `set_option diagnostics true` command.\n"],
+ "version": 1,
+ "theorems":
+ [{"name": "zero_even",
+   "hypotheses": [],
+   "conclusion":
+   {"kind": "app", "fn": "Even", "args": [{"value": 0, "kind": "nat_lit"}]}},
+  {"name": "pos_one",
+   "hypotheses": [],
+   "conclusion":
+   {"kind": "app", "fn": "Pos", "args": [{"value": 1, "kind": "nat_lit"}]}}],
+ "source_file": "crates/specmut-lean/lean/test_fixtures/minimal.lean",
+ "sorts": [],
+ "predicates":
+ [{"params": [{"sort": "Nat", "name": "n"}],
+   "name": "Even",
+   "equations":
+   [{"vars": [{"sort": "Nat", "name": "n"}],
+     "rhs":
+     {"var": "k",
+      "sort": "Nat",
+      "kind": "exists",
+      "body":
+      {"right":
+       {"kind": "app",
+        "fn": "mul",
+        "args":
+        [{"value": 2, "kind": "nat_lit"}, {"name": "k", "kind": "var"}]},
+       "left": {"name": "n", "kind": "var"},
+       "kind": "eq"}},
+     "lhs":
+     {"kind": "app", "fn": "Even", "args": [{"name": "n", "kind": "var"}]}}],
+   "body":
+   {"var": "k",
+    "sort": "Nat",
+    "kind": "exists",
+    "body":
+    {"right":
+     {"kind": "app",
+      "fn": "mul",
+      "args": [{"value": 2, "kind": "nat_lit"}, {"name": "k", "kind": "var"}]},
+     "left": {"name": "n", "kind": "var"},
+     "kind": "eq"}}},
+  {"params": [{"sort": "Nat", "name": "n"}],
+   "name": "Pos",
+   "equations":
+   [{"vars": [{"sort": "Nat", "name": "n"}],
+     "rhs":
+     {"right": {"name": "n", "kind": "var"},
+      "left": {"value": 0, "kind": "nat_lit"},
+      "kind": "lt"},
+     "lhs":
+     {"kind": "app", "fn": "Pos", "args": [{"name": "n", "kind": "var"}]}}],
+   "body":
+   {"right": {"name": "n", "kind": "var"},
+    "left": {"value": 0, "kind": "nat_lit"},
+    "kind": "lt"}}],
+ "functions": [],
+ "constructors": []}

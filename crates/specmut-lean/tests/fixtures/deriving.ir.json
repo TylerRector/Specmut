@@ -1,0 +1,79 @@
+{"warnings": [],
+ "version": 1,
+ "theorems":
+ [{"name": "blue_is_primary",
+   "hypotheses": [],
+   "conclusion":
+   {"kind": "app",
+    "fn": "isPrimary",
+    "args": [{"kind": "app", "fn": "Color.blue", "args": []}]}},
+  {"name": "red_is_primary",
+   "hypotheses": [],
+   "conclusion":
+   {"kind": "app",
+    "fn": "isPrimary",
+    "args": [{"kind": "app", "fn": "Color.red", "args": []}]}},
+  {"name": "Color.ofNat_ctorIdx",
+   "hypotheses": [],
+   "conclusion":
+   {"var": "x",
+    "sort": "Color",
+    "kind": "forall",
+    "body":
+    {"right": {"name": "x", "kind": "var"},
+     "left":
+     {"kind": "app",
+      "fn": "Color.ofNat",
+      "args":
+      [{"kind": "app",
+        "fn": "Color.ctorIdx",
+        "args": [{"name": "x", "kind": "var"}]}]},
+     "kind": "eq"}}}],
+ "source_file": "crates/specmut-lean/lean/test_fixtures/deriving.lean",
+ "sorts":
+ [{"num_params": 0, "num_ctors": 3, "name": "Color", "kind": "inductive"}],
+ "predicates":
+ [{"params": [{"sort": "Color", "name": "_"}],
+   "name": "isPrimary",
+   "equations":
+   [{"vars": [],
+     "rhs": {"kind": "true"},
+     "lhs":
+     {"kind": "app",
+      "fn": "isPrimary",
+      "args": [{"kind": "app", "fn": "Color.red", "args": []}]}},
+    {"vars": [],
+     "rhs": {"kind": "false"},
+     "lhs":
+     {"kind": "app",
+      "fn": "isPrimary",
+      "args": [{"kind": "app", "fn": "Color.green", "args": []}]}},
+    {"vars": [],
+     "rhs": {"kind": "true"},
+     "lhs":
+     {"kind": "app",
+      "fn": "isPrimary",
+      "args": [{"kind": "app", "fn": "Color.blue", "args": []}]}}],
+   "body":
+   {"kind": "app",
+    "fn": "instReprColor.repr.match_1",
+    "args":
+    [{"kind": "unsupported", "description": "unexpected lambda in proposition"},
+     {"name": "_", "kind": "var"},
+     {"kind": "unsupported", "description": "unexpected lambda in proposition"},
+     {"kind": "unsupported", "description": "unexpected lambda in proposition"},
+     {"kind": "unsupported",
+      "description": "unexpected lambda in proposition"}]}}],
+ "functions":
+ [{"name": "Color.ofNat",
+   "equations": [],
+   "domain": ["Nat"],
+   "codomain": "Color"},
+  {"name": "Color.toCtorIdx",
+   "equations": [],
+   "domain": ["Color"],
+   "codomain": "Nat"}],
+ "constructors":
+ [{"sort": "Color", "name": "Color.blue", "fields": []},
+  {"sort": "Color", "name": "Color.red", "fields": []},
+  {"sort": "Color", "name": "Color.green", "fields": []}]}

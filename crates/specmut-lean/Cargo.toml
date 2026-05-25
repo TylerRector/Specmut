@@ -1,0 +1,20 @@
+[package]
+name = "specmut-lean"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+specmut-core = { path = "../specmut-core" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = { workspace = true }
+tracing = "0.1"
+tempfile = "3"
+# Phase F: model-space sizes for SliceMetrics — workspace dep, already
+# used elsewhere downstream.
+num-bigint = { workspace = true }
+
+[dev-dependencies]
+tempfile = "3"

@@ -1,0 +1,56 @@
+{"warnings":
+ ["elaboration error: crates/specmut-lean/lean/test_fixtures/hypotheses.lean:9:10: error: failed to synthesize\n  Decidable (Pos 3)\n\nHint: Additional diagnostic information may be available using the `set_option diagnostics true` command.\n"],
+ "version": 1,
+ "theorems":
+ [{"name": "chain",
+   "hypotheses":
+   [{"name": "_",
+     "body":
+     {"right": {"value": 1, "kind": "nat_lit"},
+      "left": {"value": 1, "kind": "nat_lit"},
+      "kind": "eq"}},
+    {"name": "_", "body": {"kind": "true"}}],
+   "conclusion": {"kind": "true"}},
+  {"name": "mixed_head_hyps",
+   "hypotheses":
+   [{"name": "_",
+     "body":
+     {"kind": "app", "fn": "Pos", "args": [{"value": 1, "kind": "nat_lit"}]}}],
+   "conclusion":
+   {"var": "n",
+    "sort": "Nat",
+    "kind": "forall",
+    "body":
+    {"right": {"kind": "true"},
+     "left":
+     {"kind": "app", "fn": "Pos", "args": [{"name": "n", "kind": "var"}]},
+     "kind": "implies"}}},
+  {"name": "two_hyps",
+   "hypotheses":
+   [{"name": "_",
+     "body":
+     {"kind": "app", "fn": "Pos", "args": [{"value": 1, "kind": "nat_lit"}]}},
+    {"name": "_",
+     "body":
+     {"kind": "app", "fn": "Pos", "args": [{"value": 2, "kind": "nat_lit"}]}}],
+   "conclusion":
+   {"kind": "app", "fn": "Pos", "args": [{"value": 3, "kind": "nat_lit"}]}}],
+ "source_file": "crates/specmut-lean/lean/test_fixtures/hypotheses.lean",
+ "sorts": [],
+ "predicates":
+ [{"params": [{"sort": "Nat", "name": "n"}],
+   "name": "Pos",
+   "equations":
+   [{"vars": [{"sort": "Nat", "name": "n"}],
+     "rhs":
+     {"right": {"name": "n", "kind": "var"},
+      "left": {"value": 0, "kind": "nat_lit"},
+      "kind": "lt"},
+     "lhs":
+     {"kind": "app", "fn": "Pos", "args": [{"name": "n", "kind": "var"}]}}],
+   "body":
+   {"right": {"name": "n", "kind": "var"},
+    "left": {"value": 0, "kind": "nat_lit"},
+    "kind": "lt"}}],
+ "functions": [],
+ "constructors": []}
