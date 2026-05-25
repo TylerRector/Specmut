@@ -90,7 +90,3 @@ export PHASE4_CONFIG=phase4/config_qwen_specmut_feedback_pilot5.toml
 ```
 
 The model tag is set in the chosen `phase4/config*.toml` under `[models]`.
-
-## License
-
-Add a license of your choice before publishing (e.g. `LICENSE` + an SPDX header).
