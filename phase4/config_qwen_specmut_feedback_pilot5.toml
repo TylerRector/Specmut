@@ -1,0 +1,130 @@
+# Phase 4 — qwen-only, specmut-INFORMED constrained repair pilot (n=5).
+#
+# Scientific question:
+#   Does feeding specmut results into Qwen, together with constrained
+#   stronger theorem templates, improve semantic tightness (tau) from
+#   baseline to repaired outputs?
+#
+# This is a SEPARATE config from:
+#   - config.toml                  (original frozen run)
+#   - config_qwen_only.toml        (qwen-only 50-rep template-constrained run)
+#   - config_qwen_pilot5.toml      (qwen-only T=0.2 pilot)
+#   - config_qwen_pilot5_T04.toml  (qwen-only T=0.4 pilot)
+# None of those are modified.  Select this variant with
+#   PHASE4_CONFIG=phase4/config_qwen_specmut_feedback_pilot5.toml
+#
+# What changed vs the qwen-only run:
+#   - replicates: 5      (fast pilot; the repair mechanism is what we test)
+#   - temperature: 0.4   (the T=0.2 pilot had a saturated/deterministic
+#                         baseline with no room to show repair effect; T=0.4
+#                         restores baseline diversity per the earlier pilots)
+#   - [repair] mode = "specmut_informed_constrained"  (NEW): the repair
+#     prompt now includes the baseline specmut result + a task-specific
+#     REQUIRED stronger theorem template, and repaired output is checked by
+#     a semantic validator (validate_repair_template.py).
+
+[experiment]
+name        = "phase4_qwen_specmut_feedback_pilot5"
+base_seed   = 42
+replicates  = 5
+
+[models]
+m1 = { name = "qwen2.5-coder:7b", backend = "ollama", quantization = "q4" }
+
+[generation]
+temperature              = 0.4
+top_p                    = 0.9
+max_tokens               = 512
+generation_timeout_sec   = 600
+# Model-server URL is read from the OLLAMA_URL environment variable
+# (export OLLAMA_URL=http://host:port); not stored in the repo.
+
+[analysis]
+n                        = 2
+epsilon                  = 1.0
+max_mutants_per_slice    = 50
+max_slices_per_file      = 20
+lean_timeout_sec         = 60
+specmut_timeout_sec      = 180
+
+[thresholds]
+weak_theorem_tau   = 0.3
+strong_theorem_tau = 0.7
+
+[determinism]
+runs_per_file  = 3
+files_to_test  = 5
+ignored_fields = [
+    "timing",
+    "elapsed_sec",
+    "runtime_sec",
+    "enumeration_ms",
+    "analysis_ms",
+    "_ms",
+    "_sec",
+    "_ns",
+    "_us",
+    "timestamp",
+    "timestamp_utc",
+]
+
+[prompts]
+filename = "prompt_qwen.txt"
+
+[scaffold]
+enabled  = true
+filename = "scaffold.lean"
+
+[sanitizer]
+max_theorems  = 2
+max_lines     = 60
+require_sorry = true
+forbidden_keywords = [
+    "def ",
+    "inductive ",
+    "axiom ",
+    "lemma ",
+    "example ",
+    " by ",
+    " by\n",
+    ":= by",
+    "begin",
+    "end\n",
+    " match ",
+    "import ",
+    "open ",
+    "namespace ",
+    "class ",
+    "structure ",
+    "instance ",
+    "abbrev ",
+    "notation ",
+    "macro ",
+    "syntax ",
+    "elab ",
+    "#check",
+    "#eval",
+    "#print",
+]
+
+[repair]
+# Experiment-B variant selector.  "specmut_informed_constrained" turns on:
+#   - generate_repaired.py: prompt includes the baseline specmut summary
+#     (tau, kill rate, per-theorem tau) + a task-specific REQUIRED stronger
+#     theorem template (see scripts/repair_templates.py).
+#   - validate_repair_template.py: semantic (non-blocking) validation of the
+#     repaired theorem block; status recorded in the repaired .meta.json.
+# Any other value (or omitting this section) keeps the legacy feedback-text
+# repair path used by the other configs.
+mode                 = "specmut_informed_constrained"
+include_specmut_summary = true
+require_task_template   = true
+semantic_validation     = true
+# COMPLIANCE-GATED revised pilot: blocking is ON.  Only repair_template_ok
+# repairs are written + scored; every other status (required-theorem-missing,
+# too-many-theorems, tautology, wrong-task, freeform, syntax/generation
+# failures) is replaced with a rejected stub (Lean compile_failure) and is NOT
+# counted as a successful repaired theorem.  The raw Qwen output is preserved
+# in a .rejected_raw.txt sidecar.  Invalid repairs are REJECTED, never
+# substituted with the required template (the LLM still authors every repair).
+block_on_semantic_rejection = true

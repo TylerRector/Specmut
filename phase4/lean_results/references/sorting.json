@@ -1,0 +1,13 @@
+{
+  "status": "compile_success",
+  "errors": [],
+  "warnings": [
+    ":12:8: warning: declaration uses `sorry`",
+    ":15:8: warning: declaration uses `sorry`"
+  ],
+  "elapsed_sec": 0.41,
+  "exit_code": 0,
+  "file": "phase4/benchmarks/sorting/reference.lean",
+  "condition": "references",
+  "task": "sorting"
+}

@@ -1,0 +1,13 @@
+{
+  "status": "compile_success",
+  "errors": [],
+  "warnings": [
+    ":10:8: warning: declaration uses `sorry`"
+  ],
+  "elapsed_sec": 0.606,
+  "exit_code": 0,
+  "file": "phase4/benchmarks/set_insert/partial.lean",
+  "condition": "controls",
+  "task": "set_insert",
+  "control_type": "partial"
+}

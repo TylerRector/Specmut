@@ -1,0 +1,16 @@
+Write a Lean 4 specification for inserting a key into a set, modeled
+over List Nat (no-duplicates contract).
+
+Requirements:
+- Declare `setInsert : Nat → List Nat → List Nat` as an `axiom`.
+- Define helper predicates as `def` with concrete recursive bodies.
+- State theorems (using `:= sorry`) that fully specify set-insert semantics.
+
+The specification should be self-contained (no imports beyond Lean's core).
+
+Properties that a strong specification should capture:
+- The result is duplicate-free (no element appears more than once).
+- The inserted key is a member of the result.
+- Insertion is idempotent: inserting the same key twice equals inserting it once.
+
+Output ONLY the Lean code.  Do not include explanations or commentary.

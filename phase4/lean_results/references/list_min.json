@@ -1,0 +1,12 @@
+{
+  "status": "compile_success",
+  "errors": [],
+  "warnings": [
+    ":14:8: warning: declaration uses `sorry`"
+  ],
+  "elapsed_sec": 0.941,
+  "exit_code": 0,
+  "file": "phase4/benchmarks/list_min/reference.lean",
+  "condition": "references",
+  "task": "list_min"
+}

@@ -1,0 +1,13 @@
+{
+  "status": "compile_success",
+  "errors": [],
+  "warnings": [
+    ":15:8: warning: declaration uses `sorry`",
+    ":18:8: warning: declaration uses `sorry`"
+  ],
+  "elapsed_sec": 1.015,
+  "exit_code": 0,
+  "file": "phase4/benchmarks/list_reverse/reference.lean",
+  "condition": "references",
+  "task": "list_reverse"
+}

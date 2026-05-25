@@ -1,0 +1,11 @@
+{
+  "status": "compile_success",
+  "errors": [],
+  "warnings": [],
+  "elapsed_sec": 0.489,
+  "exit_code": 0,
+  "file": "phase4/benchmarks/set_insert/trivial.lean",
+  "condition": "controls",
+  "task": "set_insert",
+  "control_type": "trivial"
+}

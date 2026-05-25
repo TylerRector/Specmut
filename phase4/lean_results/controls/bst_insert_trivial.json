@@ -1,0 +1,11 @@
+{
+  "status": "compile_success",
+  "errors": [],
+  "warnings": [],
+  "elapsed_sec": 0.551,
+  "exit_code": 0,
+  "file": "phase4/benchmarks/bst_insert/trivial.lean",
+  "condition": "controls",
+  "task": "bst_insert",
+  "control_type": "trivial"
+}

@@ -1,0 +1,11 @@
+{
+  "status": "compile_success",
+  "errors": [],
+  "warnings": [],
+  "elapsed_sec": 0.678,
+  "exit_code": 0,
+  "file": "phase4/benchmarks/list_min/partial.lean",
+  "condition": "controls",
+  "task": "list_min",
+  "control_type": "partial"
+}
